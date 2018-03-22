@@ -85,8 +85,6 @@ Vertex<T> * Graph<T>::findVertex(const T &in) const {
 	return NULL;
 }
 
-/****************** 1a) addVertex ********************/
-
 /*
  *  Adds a vertex with a given content/info (in) to a graph (this).
  *  Returns true if successful, and false if a vertex with that content already exists.
@@ -99,8 +97,6 @@ bool Graph<T>::addVertex(const T &in) {
 	this->vertexSet.push_back(new Vertex<T>(in));
 	return true;
 }
-
-/****************** 1b) addEdge ********************/
 
 /*
  * Adds an edge to a graph (this), given the contents of the source (sourc) and
@@ -130,9 +126,6 @@ template <class T>
 void Vertex<T>::addEdge(Vertex<T> *d, double w) {
 	this->adj.push_back(Edge<T>(d,w));
 }
-
-
-/****************** 1c) removeEdge ********************/
 
 /*
  * Removes an edge from a graph (this).
@@ -165,9 +158,6 @@ bool Vertex<T>::removeEdgeTo(Vertex<T> *d) {
 	return false;
 }
 
-
-/****************** 1d) removeVertex ********************/
-
 /*
  *  Removes a vertex with a given content (in) from a graph (this), and
  *  all outgoing and incoming edges.
@@ -188,9 +178,6 @@ bool Graph<T>::removeVertex(const T &in) {
 	return false;
 }
 
-
-/****************** 2a) dfs ********************/
-
 /*
  * Performs a depth-first search (dfs) in a graph (this).
  * Returns a vector with the contents of the vertices by dfs order.
@@ -198,8 +185,12 @@ bool Graph<T>::removeVertex(const T &in) {
  */
 template <class T>
 vector<T> Graph<T>::dfs() const {
-	// TODO (7 lines)
 	vector<T> res;
+	for(auto vertex : vertexSet)
+		vertex->visited = false;
+	for(auto vertex : vertexSet)
+		if(!vertex->visited)
+			dfsVisit(vertex,res);
 	return res;
 }
 
@@ -208,8 +199,15 @@ vector<T> Graph<T>::dfs() const {
  * Updates a parameter with the list of visited node contents.
  */
 template <class T>
-void Graph<T>::dfsVisit(Vertex<T> *v, vector<T> & res) const {
-	// TODO (7 lines)
+void Graph<T>::dfsVisit(Vertex<T> *vertex, vector<T> & res) const {
+	vertex->visited = true;
+	res.push_back(vertex->info);
+	for (auto & e : v->adj) {
+			auto w = e.dest;
+		    if ( ! w->visited)
+		    	dfsVisit(w, res);
+		}
+	}
 }
 
 /****************** 2b) bfs ********************/
@@ -287,5 +285,23 @@ bool Graph<T>::dfsIsDAG(Vertex<T> *v) const {
 	// TODO (12 lines, mostly reused)
 	return true;
 }
+
+
+//OTHER FUNCTIONS IN REGARDS TO THE UTILITY OF GRAPHS
+
+/**
+* @brief Checks if a edge exists in a vector of edges.
+* @param edges - vector of edges
+* @param e - testing edge
+* @return true if the edge exists on the vector
+*/
+bool Graph::edge_alreadyExists(vector<Edge*> & edges, Edge * e) {
+	for (size_t i = 0; i < edges.size(); i++) {
+		if (edges[i] == e)
+			return true;
+	}
+	return false;
+}
+
 
 #endif /* GRAPH_H_ */
