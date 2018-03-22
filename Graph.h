@@ -176,12 +176,15 @@ bool Vertex<T>::removeEdgeTo(Vertex<T> *d) {
 template <class T>
 bool Graph<T>::removeVertex(const T &in) {
 
-	for(auto it = this->vertexSet.begin();it != this->vertexSet.end();it++){
-		if(it->info == in){
-			this->vertexSet.erase(it);
+	for (auto it = vertexSet.begin(); it != vertexSet.end(); it++)
+		if ((*it)->info  == in) {
+			auto v = *it;
+			vertexSet.erase(it);
+			for (auto u : vertexSet)
+				u->removeEdgeTo(v);
+			delete v;
+			return true;
 		}
-	}
-
 	return false;
 }
 
