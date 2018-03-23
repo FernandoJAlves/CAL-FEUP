@@ -1,11 +1,12 @@
 #include "Zone.h"
+#include <iostream>
 
 Zone::Zone() {}
 
 Zone::Zone(std::string name, double x, double y, int limit):name(name),x(x),y(y),limit(limit)
 {}
 
-Zone::Zone(std::string name, double x, double y, int limit, bool acessable):name(name),x(x),y(y),limit(limit),acessable(acessable)
+Zone::Zone(std::string name, double x, double y, int limit, bool acessable):name(name),x(x),y(y),acessable(acessable),limit(limit)
 {}
 
 double Zone::getX(){
@@ -20,7 +21,7 @@ std::string Zone::getName(){
 }
 
 bool Zone::isAcessable(){
-  return this->acessable
+  return this->acessable;
 }
 int Zone::getLimit(){
   return this->limit;

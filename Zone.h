@@ -18,4 +18,7 @@ public:
   std::string getName();
   bool isAcessable();
   int getLimit();
-}
+};
+
+
+#endif
