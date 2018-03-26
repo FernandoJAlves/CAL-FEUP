@@ -26,3 +26,7 @@ bool Zone::isAcessable(){
 int Zone::getLimit(){
   return this->limit;
 }
+
+void Zone::setAcess(bool acess){
+  this->acessable = acess;
+}
