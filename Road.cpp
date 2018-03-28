@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 
-Road::Road(Node * src, Node * dest):src(src),dest(dest)
+Road::Road(Node * src, Node * dest):bidirectional(false),src(src),dest(dest)
 {
 	this->defineDist();
 	this->defineLimit();
