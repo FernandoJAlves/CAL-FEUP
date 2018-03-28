@@ -1,0 +1,8 @@
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\bin\Release\OpenStreetMapsParser.exe
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\bin\Release\OpenStreetMapsParser.pdb
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Release\OpenStreetMapsParser.csprojResolveAssemblyReference.cache
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Release\OpenStreetMapsParser.Form1.resources
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Release\OpenStreetMapsParser.Properties.Resources.resources
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Release\OpenStreetMapsParser.csproj.GenerateResource.Cache
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Release\OpenStreetMapsParser.exe
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Release\OpenStreetMapsParser.pdb

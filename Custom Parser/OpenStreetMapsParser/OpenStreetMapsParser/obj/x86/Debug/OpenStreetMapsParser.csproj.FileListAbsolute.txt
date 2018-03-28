@@ -1,0 +1,8 @@
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\bin\Debug\OpenStreetMapsParser.exe
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\bin\Debug\OpenStreetMapsParser.pdb
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Debug\OpenStreetMapsParser.Form1.resources
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Debug\OpenStreetMapsParser.Properties.Resources.resources
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Debug\OpenStreetMapsParser.csproj.GenerateResource.Cache
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Debug\OpenStreetMapsParser.exe
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Debug\OpenStreetMapsParser.pdb
+C:\Users\joao-\Documents\2º Ano\CAL\OpenStreetMapsParser\OpenStreetMapsParser\obj\x86\Debug\OpenStreetMapsParser.csprojResolveAssemblyReference.cache
