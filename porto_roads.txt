@@ -1,0 +1,445 @@
+1;Rua Álvares Cabral;False;
+4;;False;
+6;Rua do Padre Cruz;False;
+8;Rua da Boavista;False;PT:urban
+17;Avenida de Sidónio Pais;False;PT:urban
+22;Rua 5 de Outubro;False;PT:urban
+24;Rua Pedro Hispano;False;PT:urban
+25;Rua de António Bessa Leite;False;PT:urban
+29;Rua Domingos Sequeira;False;PT:urban
+30;Rua de Nossa Senhora de Fátima;True;PT:urban
+32;Rua da Piedade;False;PT:urban
+34;Praça do Bom Sucesso;False;PT:urban
+36;Praça do Bom Sucesso;False;PT:urban
+39;;False;PT:urban
+41;Rua Arquitecto Marques da Silva;False;PT:urban
+47;Avenida da Boavista;False;PT:urban
+52;Avenida da Boavista;False;PT:urban
+59;Rua do Bom Sucesso;False;PT:urban
+62;Rua Gonçalo Sampaio;True;PT:urban
+70;Largo de Ferreira Lapa;False;PT:urban
+77;Praça do Bom Sucesso;False;PT:urban
+78;Rua Paula Vicente;False;PT:urban
+82;Rua Doutor Carlos Cal Brandão;False;PT:urban
+84;;False;PT:urban
+91;Rua de António Cardoso;False;PT:urban
+102;Rua da Venezuela;False;PT:urban
+112;Rua da Venezuela;False;PT:urban
+122;Rua da Meditação;False;PT:urban
+133;Rua Guerra Junqueiro;False;PT:urban
+141;Rua da Torrinha;False;PT:urban
+144;Rua Joaquim de Vasconcelos;False;PT:urban
+154;Rua da Igreja de Cedofeita;False;PT:urban
+155;Rua de Rodrigues Lobo;False;PT:urban
+156;Rua do Bom Sucesso;False;PT:urban
+163;Rua de Ricardo Severo;False;PT:urban
+165;Rua da Paz;False;PT:urban
+170;Rua dos Vanzeleres;False;PT:urban
+173;Rua das Artes Gráficas;False;PT:urban
+174;Rua João Martins Branco;False;PT:urban
+177;Rua do Barão de Forrester;False;PT:urban
+189;;False;PT:urban
+194;Rua do Tenente Valadim;False;PT:urban
+203;Rua Fernandes Costa;False;PT:urban
+209;Rua de Augusto Gil;False;PT:urban
+214;Rua Moreira de Sá;False;PT:urban
+215;Rua Pereira de Novais;False;PT:urban
+216;Rua António José Costa;False;PT:urban
+218;Rua de Brito Capelo;False;PT:urban
+223;Rua Sacadura Cabral;False;PT:urban
+226;Largo da Paz;False;PT:urban
+229;Largo da Paz;False;PT:urban
+230;Rua de Aníbal Cunha;False;PT:urban
+240;Avenida da Boavista;False;PT:urban
+242;;False;PT:urban
+245;;False;PT:urban
+246;;False;PT:urban
+247;;False;PT:urban
+248;;False;PT:urban
+249;Rua de Felicidade Brown;False;PT:urban
+252;Rua de António Patrício;True;PT:urban
+255;Rua de António Nobre;False;PT:urban
+258;Rua do Doutor José de Figueiredo;False;PT:urban
+261;Rua de Alberto Oliveira;False;PT:urban
+267;Rua da Graciosa;False;PT:urban
+270;Rua do Professor Câmara Sinval;False;PT:urban
+285;Rua de Feliciano de Castilho;False;PT:urban
+295;Rua do Cónego Ferreira Pinto;False;PT:urban
+303;Rua de Dom António Barroso;False;PT:urban
+305;Rua da Infanta Dona Maria;False;PT:urban
+325;;False;PT:urban
+328;;False;PT:urban
+329;Rua Paula Vicente;False;PT:urban
+330;Rua Paula Vicente;False;PT:urban
+332;;False;PT:urban
+333;;False;PT:urban
+334;;False;PT:urban
+336;;False;PT:urban
+337;;False;PT:urban
+341;Travessa da Quinta Amarela;False;PT:urban
+351;Rua Dom Nicolau Monteiro;False;PT:urban
+352;Rua Particular 9 de Julho;False;PT:urban
+353;Rua Doutor Mário de Vasconcelos e Sá;False;PT:urban
+358;Rua dos Burgães;False;PT:urban
+388;Rua do Soajo;False;PT:urban
+389;Rua do Melo;False;PT:urban
+401;Rua da Bouça;False;PT:urban
+410;Rua do Gerês;False;PT:urban
+415;Rua de Marques Marinho;False;PT:urban
+428;Rua da Peneda;False;PT:urban
+432;Rua do Marão;False;PT:urban
+438;Rua da Aliança;False;PT:urban
+442;Rua do Zambeze;False;PT:urban
+447;Rua do Niassa;False;50
+451;Rua 9 de Julho;False;50
+455;Travessa de Marracuene;False;50
+456;Rua Augusto Luso;False;50
+458;Praça de Pedro Nunes;False;50
+473;Rua do Instituto de Cegos de São Manuel;False;50
+486;Rua de Santa Isabel;False;50
+487;Travessa da Paz;False;50
+494;Largo do Priorado;False;50
+502;Rua de São Martinho;False;50
+505;Rua Padre Luís Rodrigues;False;50
+509;Rua do Limpopo;False;50
+510;Rua de Cabinda;False;50
+511;Rua de Coolela;False;50
+512;Rua de Chaimite;False;50
+520;;False;50
+523;Rua de Vieira Portuense;False;50
+525;Rua General Norton de Matos;False;50
+527;Rua Capitão Henrique Galvão;False;50
+529;Travessa das Águas Férreas;False;50
+530;Rua de Soares de Passos;False;50
+536;Praça de Teixeira Lopes;False;50
+540;Rua de Coelho Lousada;False;50
+543;Travessa de Entre Campos;False;50
+549;Via Panorâmica;False;50
+561;Rua de Manuel Bandeira;False;50
+563;;False;50
+565;Rua da Venezuela;False;50
+570;Rua de Manuel Bandeira;False;50
+603;Rua de Manuel Bandeira;False;50
+606;Rua de Manuel Bandeira;False;50
+611;Rua de Ruben A.;False;50
+613;Rua de Júlio Brandão;False;50
+621;Rua de Ruben A.;False;50
+629;Rua de António Pinto Machado;False;50
+631;;False;50
+632;;False;50
+633;Rua de Marracuene;False;50
+642;Rua de Vitorino Nemésio;False;50
+647;;False;50
+649;Rua de Cedofeita;False;50
+659;;False;50
+664;Rua de Guilherme Braga;False;50
+667;;False;50
+673;Rua João de Deus;False;50
+681;;False;50
+682;;False;50
+686;Rua do Monsenhor Fonseca Soares;True;50
+697;Rua Pedro Veiga;True;50
+698;Rua Domingos Sequeira;False;50
+699;;False;50
+704;;False;50
+708;Rua de Belos Ares;False;50
+711;Rua do Padre Alexandre;False;50
+712;Rua 15 de Novembro;False;50
+714;Rua João Araújo Correia;False;50
+720;Rua do Sargento Abílio;False;50
+723;;False;50
+746;Rua Doutor Emílio Peres;True;50
+747;;False;50
+749;Rua Veiga Leitão;False;50
+751;Rua da Saudade;True;50
+752;Rua Veiga Leitão;True;50
+758;Rua Veiga Leitão;False;50
+760;;True;50
+778;Rua da Saudade;False;50
+782;Rua de Barbosa du Bocage;True;50
+783;Largo de Ferreira Lapa;False;50
+792;Rua de Oliveira Monteiro;False;50
+803;Avenida da Boavista;False;50
+805;Rua de Júlio Dinis;True;50
+807;Rua de Júlio Dinis;True;50
+809;Largo de Ferreira Lapa;False;50
+811;Largo de Ferreira Lapa;False;50
+813;Rua Augusto Luso;False;50
+814;Rua da Boavista;False;50
+815;Largo do Priorado;False;50
+820;Rua de Aníbal Cunha;False;50
+822;Rua de Aníbal Cunha;False;50
+824;Praça de Pedro Nunes;False;50
+830;Túnel do Campo Alegre;False;50
+831;Rua Gonçalo Sampaio;False;50
+840;;False;50
+844;Rua do Campo Alegre;True;50
+855;Largo de Ferreira Lapa;False;50
+859;Largo de Ferreira Lapa;False;50
+864;Rua de São Paulo;False;50
+866;Travessa da Carvalhosa;False;50
+870;Viela da Carvalhosa;False;50
+882;;False;50
+886;Rua Robert Smith;True;50
+893;;False;50
+895;Largo de Ferreira Lapa;False;50
+896;Largo de Ferreira Lapa;False;50
+897;Largo de Ferreira Lapa;False;50
+899;Largo de Ferreira Lapa;False;50
+901;Rua de Pedro Hispano;True;50
+909;Rua de Agramonte;False;50
+910;Rua de Agramonte;False;50
+914;Rua de Júlio Dinis;True;50
+918;Rua de Júlio Dinis;False;50
+925;Rua de Júlio Dinis;False;50
+931;Rua do Melo;False;50
+932;Rua das Águas Férreas;False;50
+935;Rua dos Vanzeleres;False;50
+941;;False;50
+949;;True;50
+950;Largo Alexandre Sá Pinto;False;50
+952;;False;50
+953;;False;50
+955;;True;50
+958;;True;50
+959;Rua de Agramonte;False;50
+969;Rua de Pedro Hispano;False;50
+975;;False;50
+983;;False;50
+984;;False;50
+992;;False;50
+1000;;False;50
+1004;Rua Capitão Henrique Galvão;False;50
+1010;;False;50
+1014;Rua General Norton de Matos;False;50
+1042;;False;50
+1050;Rua de O Primeiro de Janeiro;False;50
+1065;Praça Mouzinho de Albuquerque;False;50
+1110;Avenida da Boavista;False;50
+1112;Avenida da França;False;50
+1117;;False;50
+1119;Rua de Artur Napoleão;False;50
+1120;Rua de Júlio Dinis;True;50
+1121;Rua Domingos Sequeira;False;50
+1125;Rua Helena Sá e Costa;False;50
+1129;Rua de Francisco Sanches;False;50
+1134;Rua Pedro Hispano;False;50
+1137;Rua Capitão Henrique Galvão;False;50
+1140;Rua 5 de Outubro;False;50
+1144;Rua Pedro Hispano;False;50
+1146;Rua 5 de Outubro;False;50
+1147;;False;50
+1150;;False;50
+1152;;False;50
+1163;;False;50
+1175;;False;50
+1176;;False;50
+1186;Travessa da Figueirôa;False;50
+1194;Avenida da França;False;50
+1199;Rua Gonçalo Sampaio;False;50
+1202;Rua do Campo Alegre;True;50
+1208;Avenida da Boavista;False;50
+1217;Avenida da Boavista;False;50
+1224;Rua do Campo Alegre;True;50
+1229;;False;50
+1232;Rua João de Deus;True;50
+1236;Rua 5 de Outubro;False;50
+1242;;False;50
+1256;;False;50
+1260;;False;50
+1263;;False;50
+1267;;True;50
+1269;Avenida da Boavista;False;50
+1280;;False;50
+1281;;False;50
+1282;Rua João de Deus;True;50
+1284;Rua João de Deus;False;50
+1291;;False;50
+1292;Rua da Piedade;False;50
+1294;Rua do Padre Cruz;False;50
+1298;Rua João de Deus;False;50
+1304;Rua General Norton de Matos;False;50
+1310;Rua de Vieira Portuense;False;50
+1312;Rua General Norton de Matos;False;50
+1319;;False;50
+1322;Rua do Campo Alegre;False;50
+1324;Rua Gonçalo Sampaio;False;50
+1327;Rua do Bom Sucesso;True;50
+1328;Rua de Agramonte;False;50
+1333;Rua da Bouça;False;50
+1347;;False;50
+1352;Calçada Marques Marinho;False;50
+1357;Rua da Peneda;False;50
+1371;;False;50
+1373;;False;50
+1378;;False;50
+1384;;False;50
+1392;;False;50
+1396;;False;50
+1398;;False;50
+1399;;False;50
+1419;;False;50
+1421;;False;50
+1422;;False;50
+1423;Rua das Águas Férreas;False;50
+1429;;False;50
+1430;;False;50
+1432;;False;50
+1434;;False;50
+1440;;False;50
+1447;;False;50
+1448;;True;50
+1449;;False;50
+1450;;False;50
+1451;;False;50
+1452;;False;50
+1454;;False;50
+1457;;False;50
+1461;;False;50
+1465;;False;50
+1466;;False;50
+1467;;False;50
+1468;;False;50
+1469;;False;50
+1472;;False;50
+1473;;False;50
+1474;;False;50
+1477;;False;50
+1478;;False;50
+1483;;False;50
+1489;Rua Brigadeiro Nunes da Ponte;False;50
+1496;Rua de Agramonte;False;50
+1501;Rua de Agramonte;False;50
+1506;;False;50
+1507;;False;50
+1509;;False;50
+1514;;False;50
+1519;;False;50
+1520;;False;50
+1521;;False;50
+1522;;False;50
+1523;;False;50
+1525;;False;50
+1527;;False;50
+1534;;False;50
+1536;Avenida de Sidónio Pais;False;50
+1537;Rua 5 de Outubro;False;50
+1538;Rua da Travagem;False;50
+1545;Rua de Nossa Senhora de Fátima;False;50
+1568;Rua do Barão de Forrester;False;50
+1581;Rua da Cooperativa da Zona da Boavista;False;50
+1582;Rua da Cooperativa da Zona da Boavista;False;50
+1583;Rua de Chaimite;False;50
+1584;Rua de Nossa Senhora de Fátima;True;PT:urban
+1585;;True;PT:urban
+1586;;True;PT:urban
+1589;;False;PT:urban
+1594;Rua da Boavista;False;PT:urban
+1596;Rua de Cedofeita;False;PT:urban
+1600;Largo de Ferreira Lapa;False;PT:urban
+1601;Rua Caldas Xavier;False;PT:urban
+1604;Rua de Oliveira Monteiro;False;PT:urban
+1614;Largo de Ferreira Lapa;False;PT:urban
+1616;;False;PT:urban
+1617;;False;PT:urban
+1618;Avenida de Sidónio Pais;False;PT:urban
+1621;Avenida de Sidónio Pais;False;PT:urban
+1625;Rua de Serpa Pinto;False;50
+1629;Rua de Dom António Barroso;False;50
+1639;;False;50
+1641;Rua João Araújo Correia;False;50
+1644;Rua do Tenente Valadim;False;50
+1649;Praça do Bom Sucesso;False;50
+1654;Rua 9 de Julho;False;50
+1664;Largo da Ramada Alta;False;50
+1698;;False;50
+1701;;False;50
+1704;;False;50
+1705;Rua de Oliveira Monteiro;False;50
+1717;Rua de Egas Moniz;False;50
+1727;Rua de Serpa Pinto;False;50
+1732;Rua de Serpa Pinto;False;50
+1733;Rua de Serpa Pinto;False;50
+1734;Rua da Constituição;False;50
+1756;Rua das Classes Obreiras;False;50
+1761;Rua das Classes Obreiras;False;50
+1762;Praceta Egito Gonçalves;False;50
+1766;Rua 5 de Outubro;False;50
+1767;Avenida da Boavista;False;50
+1785;Rua de Agramonte;True;50
+1787;;False;50
+1790;Rua Ofélia Diogo da Costa;False;50
+1801;;False;50
+1803;;False;50
+1804;;False;50
+1808;;False;50
+1820;Rua Doutor Mário de Vasconcelos e Sá;False;50
+1840;Rua de Serpa Pinto;False;50
+1850;Rua Paula Vicente;False;PT:urban
+1862;Rua Ofélia Diogo da Costa;False;PT:urban
+1877;Rua das Artes Gráficas;False;PT:urban
+1878;Rua Moreira de Sá;False;PT:urban
+1880;Praceta de João Augusto Ribeiro;False;PT:urban
+1886;Rua João Araújo Correia;False;PT:urban
+1888;;False;PT:urban
+1890;;False;PT:urban
+1891;Rua de Agramonte;False;PT:urban
+1907;Rua de Agramonte;False;PT:urban
+1909;Rua de O Primeiro de Janeiro;True;PT:urban
+1914;Rua de O Primeiro de Janeiro;False;PT:urban
+1917;Rua 9 de Julho;False;PT:urban
+1921;;False;PT:urban
+1923;;False;PT:urban
+1924;Rua do Campo Alegre;False;PT:urban
+1926;;False;PT:urban
+1928;Rua Gonçalo Sampaio;True;PT:urban
+1929;Rua Gonçalo Sampaio;True;PT:urban
+1931;Rua do Campo Alegre;False;PT:urban
+1933;;False;PT:urban
+1935;Rua de Júlio Dinis;True;PT:urban
+1936;Rua de Júlio Dinis;True;PT:urban
+1937;Rua de Júlio Dinis;True;PT:urban
+1938;Avenida da França;False;PT:urban
+1951;Praça do Conde de Samodães;False;PT:urban
+1953;Praça do Conde de Samodães;False;PT:urban
+1954;Largo de Ferreira Lapa;False;PT:urban
+1966;;False;PT:urban
+1971;;False;PT:urban
+1974;Rua de Agramonte;True;PT:urban
+1978;Rua de Agramonte;False;PT:urban
+1985;Avenida da Boavista;False;PT:urban
+1986;Rua do Tenente Valadim;False;PT:urban
+1992;Rua de Pedro Hispano;False;PT:urban
+2000;Rua de Pedro Hispano;False;PT:urban
+2010;Largo do Cruzinho;False;PT:urban
+2015;Travessa de Santo Amaro;False;PT:urban
+2025;;False;PT:urban
+2026;;False;PT:urban
+2027;;False;PT:urban
+2028;;False;PT:urban
+2031;;False;PT:urban
+2032;;False;PT:urban
+2033;;False;PT:urban
+2043;;False;PT:urban
+2046;Rua do Instituto de Cegos de São Manuel;False;PT:urban
+2048;Largo de Ferreira Lapa;True;PT:urban
+2049;;True;PT:urban
+2054;;True;PT:urban
+2056;;True;PT:urban
+2057;;True;PT:urban
+2058;;True;PT:urban
+2059;;True;PT:urban
+2061;;True;PT:urban
+2062;;True;PT:urban
+2072;;False;PT:urban
+2074;;False;PT:urban
+2076;;True;PT:urban
+2077;;True;PT:urban
+2080;;True;PT:urban
+2083;;False;PT:urban
+2084;;False;PT:urban
+2085;;False;PT:urban
+2088;;False;PT:urban
+2089;;False;PT:urban
+2091;;True;PT:urban
+2092;;True;PT:urban
