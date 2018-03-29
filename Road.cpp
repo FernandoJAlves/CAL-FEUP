@@ -42,7 +42,7 @@ Node * Road::getDest(){
 }
 
 void Road::defineLimit(){
-	//TODO by Fernando
+	this->limit = dist * maxspeed; //TODO maybe this is too much, we need to test
 }
 
 void Road::defineDist(){

@@ -51,7 +51,7 @@ void Map::read_subroads(){
 			ss >> index >> comma >> src >> comma >> dest;
 			ss.clear();
 			r = new Road(nodes[src-1],nodes[dest-1]);
-			this->nodes[src-1]->addRoad(*r);
+			this->nodes[src-1]->addRoad(r);
 			this->roads.push_back(r);
 		}
 		file.close();
@@ -106,3 +106,16 @@ void Map::read(){
 	read_subroads();
 	read_roads();
 }
+
+
+
+//Novos metodos a implementar
+
+Node* Map::findNode(const unsigned int index) const {
+	if(index >= this->nodes.size()){
+		return NULL;
+	}
+	return this->nodes.at(index);
+
+}
+

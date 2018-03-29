@@ -14,9 +14,11 @@ private:
   bool acessable = true;
   bool bidirectional;
 
-  int dist;
+  int dist; // será usado como valor de weight
   int limit;
   int maxspeed;
+
+  int car_count = 0; //usado para saber quantos carros irão passar numa dada Road e determinar se devemos redirecionar
 
   Node * src;
   Node * dest;
