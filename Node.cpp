@@ -1,6 +1,6 @@
 #include "Node.h"
 
-Node::Node(int x, int y): x(x),y(y)
+Node::Node(int x, int y, int index): x(x),y(y), index(index)
 {}
 
 int Node::getX(){

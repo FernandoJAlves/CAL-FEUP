@@ -9,6 +9,7 @@ class Road;
 class Node{
 private:
 	int x,y;
+	unsigned int index;
 	std::vector<Road*> roads;
 
 	bool visited;          // auxiliary field
@@ -17,7 +18,7 @@ private:
 	int queueIndex = 0; 		// required by MutablePriorityQueue
 
 public:
-	Node(int x, int y);
+	Node(int x, int y, int index);
 	int getX();
 	int getY();
 	std::vector<Road*>  & getRoads();
@@ -25,6 +26,7 @@ public:
 
 	bool operator<(Node & n) const; // // required by MutablePriorityQueue
 
+	friend class Map;
 	friend class MutablePriorityQueue;
 
 };

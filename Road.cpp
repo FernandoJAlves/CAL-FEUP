@@ -15,22 +15,22 @@ void Road::setInfo(std::string name, bool bidirectional, int maxspeed){
 }
 
 int Road::getDist(){
-  return this->dist;
+  return this->dist_weight;
 }
 
 std::string Road::getName(){
   return this->name;
 }
 
-bool Road::isAcessable(){
-  return this->acessable;
+bool Road::isAccessable(){
+  return this->accessable;
 }
 int Road::getLimit(){
   return this->limit;
 }
 
-void Road::setAcess(bool acess){
-  this->acessable = acess;
+void Road::setAccess(bool acess){
+  this->accessable = acess;
 }
 
 Node * Road::getSrc(){
@@ -42,9 +42,9 @@ Node * Road::getDest(){
 }
 
 void Road::defineLimit(){
-	this->limit = dist * maxspeed; //TODO maybe this is too much, we need to test
+	this->limit = dist_weight * maxspeed; //TODO maybe this is too much, we need to test
 }
 
 void Road::defineDist(){
-	this->dist = sqrt(pow(this->src->getX() - this->dest->getX(),2)+pow(this->src->getY() - this->dest->getY(),2));
+	this->dist_weight = sqrt(pow(this->src->getX() - this->dest->getX(),2)+pow(this->src->getY() - this->dest->getY(),2));
 }

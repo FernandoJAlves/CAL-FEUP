@@ -9,12 +9,11 @@ class Node;
 class Road{
 private:
   std::string name;
-
   
-  bool acessable = true;
+  bool accessable = true;
   bool bidirectional;
 
-  int dist; // será usado como valor de weight
+  int dist_weight; // será usado como valor de weight
   int limit;
   int maxspeed;
 
@@ -27,15 +26,18 @@ public:
   void setInfo(std::string name, bool bidirectional, int maxspeed);
   int getDist();
   std::string getName();
-  bool isAcessable();
+  bool isAccessable();
   bool isBidirectional();
   int getLimit();
-  void setAcess(bool acess);
+  void setAccess(bool acess);
   int getMaxspeed();
   Node * getSrc();
   Node * getDest();
   void defineLimit();
   void defineDist();
+
+  friend class Map;
+  
 };
 
 

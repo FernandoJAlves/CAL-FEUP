@@ -3,6 +3,7 @@
 
 #include "graphviewer.h"
 #include "Node.h"
+#include <limits>
 
 #define INF std::numeric_limits<double>::max()
 
@@ -23,7 +24,7 @@ public:
 	Node* findNode(const unsigned int index) const;
 	void dijkstraShortestPath_modified(const unsigned int origin);
 	vector<unsigned int> getPath(const unsigned int origin, const unsigned int dest) const;
-
+	void setAccessRoad(unsigned int index, bool value);
 
 };
 

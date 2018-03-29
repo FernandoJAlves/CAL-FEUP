@@ -6,13 +6,18 @@
 
 class Car{
 private:
-	std::vector<int> path_Index;
+	std::vector<unsigned int> path_Index;
 public:
 	Car();
+	Car(std::vector<unsigned int> v){
+		this.path_Index = v;
+	}
 	void add_Index(int i){
 		this.path_Index.push_back(i);
 	}
-
+	void set_Path(std::vector<unsigned int> v){
+		this.path_Index = v;
+	}
 
 	
 };
