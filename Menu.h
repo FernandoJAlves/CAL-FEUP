@@ -7,13 +7,13 @@
 
 class Menu{
 
-
 public:
-	Menu();
+	bool terminate = false;
+	Menu(){}
 	void calculatePaths();
 
 
-	friend Map;
+
 
 
 

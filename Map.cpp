@@ -13,10 +13,12 @@
 using namespace std;
 
 Map::Map(){
-	gv = new GraphViewer(600, 600, true);
+	gv = new GraphViewer(600, 600, false);
 	gv->createWindow(600, 600);
+	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	this->read();
+	this->draw_map();
 }
 
 void Map::read_nodes(){
@@ -50,11 +52,13 @@ void Map::read_subroads(){
 	if(file.is_open()){
 		while(getline(file,line)){
 			ss << line;
-			ss >> index >> comma >> src >> comma >> dest;
+			ss >> index >> comma >> src >> comma >> dest >> comma;
+			//cout << "First: " << index << " " << src << " " << dest << endl;
 			ss.clear();
 			r = new Road(nodes[src-1],nodes[dest-1]);
 			this->nodes[src-1]->addRoad(r);
 			this->roads.push_back(r);
+			//cout << "Second: " << index << " " << src << " " << dest << endl;
 		}
 		file.close();
 	}
@@ -110,6 +114,21 @@ void Map::read(){
 }
 
 
+void Map::draw_map(){
+	for(auto it : this->nodes){
+		gv->addNode(it->index, it->x, it->y);
+	}
+	gv->rearrange();
+	
+
+	for(unsigned int i = 0; i < this->roads.size();i++){
+		gv->addEdge(i,this->roads.at(i)->src->index,this->roads.at(i)->dest->index,EdgeType::UNDIRECTED);
+		gv->setEdgeLabel(i, "Teste");
+	}
+	gv->rearrange();
+
+}
+
 
 //Novos metodos a implementar
 
@@ -128,6 +147,7 @@ void Map::dijkstraShortestPath_modified(const unsigned int origin){
 	for(auto it: this->nodes){
 		it->dist = INF;
 		it->path = NULL;
+		it->queueIndex = 0;
 	}
 
 	v1->dist = 0;
@@ -171,6 +191,16 @@ vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int 
 	vector<unsigned int> temp;
 	Node * v1 = this->findNode(dest);
 	Node * last = v1->path;
+
+	if(last == NULL){
+		if(origin == dest){
+			cout << "The origin and destination introduced are the same node.\n";
+		}
+		else{
+			cout << "There is no paths available from node " << origin << " to node " << dest << endl;
+		}
+	}
+
 	while(last != NULL){
 		temp.push_back(last->index);
 		last = last->path;
@@ -191,4 +221,12 @@ vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int 
 void Map::setAccessRoad(unsigned int index, bool value){
 	this->roads.at(index)->setAccess(value);
 }
+
+
+void Map::printRoads(){
+	for(auto it : this->roads){
+		cout << it->src->index << " " << it->dest->index << endl;
+	}
+}
+
 

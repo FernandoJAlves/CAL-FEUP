@@ -22,5 +22,32 @@ void Menu::calculatePaths(){
 
 
 
+	Map m;
 
+	unsigned int origin, dest;
+
+	cout << "Indique o nó atual: ";
+	cin >> origin;
+
+
+	cout << "Indique o nó destino: ";
+	cin >> dest;
+
+	
+	m.dijkstraShortestPath_modified(origin);
+	vector<unsigned int> v1 = m.getPath(origin, dest);
+
+	if(v1.size() > 1){
+		for(unsigned int i = 0; i < v1.size()-1; i++){
+			cout << v1.at(i) << " -> ";
+		}
+		cout << v1.at(v1.size()-1);
+	}
+
+
+
+	this->terminate = true;
+
+	
 }
+

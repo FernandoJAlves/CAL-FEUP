@@ -18,6 +18,7 @@ public:
 	void read_nodes();
 	void read_subroads();
 	void read_roads();
+	void draw_map();
 
 
 //Novos metodos a implementar
@@ -25,6 +26,13 @@ public:
 	void dijkstraShortestPath_modified(const unsigned int origin);
 	vector<unsigned int> getPath(const unsigned int origin, const unsigned int dest) const;
 	void setAccessRoad(unsigned int index, bool value);
+
+
+//Metodos para teste
+	void printRoads();
+
+
+	friend class Menu;
 
 };
 

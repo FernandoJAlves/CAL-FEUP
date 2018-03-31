@@ -12,7 +12,7 @@ private:
 	unsigned int index;
 	std::vector<Road*> roads;
 
-	bool visited;          // auxiliary field
+	//bool visited;          // auxiliary field
 	double dist = 0;
 	Node *path = NULL;
 	int queueIndex = 0; 		// required by MutablePriorityQueue
