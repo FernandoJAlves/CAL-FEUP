@@ -37,6 +37,7 @@ public:
   void defineDist();
 
   friend class Map;
+  friend class Menu;
   
 };
 

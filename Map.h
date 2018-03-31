@@ -25,8 +25,9 @@ public:
 	Node* findNode(const unsigned int index) const;
 	void dijkstraShortestPath_modified(const unsigned int origin);
 	vector<unsigned int> getPath(const unsigned int origin, const unsigned int dest) const;
+	vector<unsigned int> getPath_secure(const unsigned int origin, const unsigned int dest) const;
 	void setAccessRoad(unsigned int index, bool value);
-
+	bool incrementCounter(vector<unsigned int> v1);
 
 //Metodos para teste
 	void printRoads();

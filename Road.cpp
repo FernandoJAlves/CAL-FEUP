@@ -12,6 +12,8 @@ void Road::setInfo(std::string name, bool bidirectional, int maxspeed){
 	this->name = name;
 	this->bidirectional = bidirectional;
 	this->maxspeed = maxspeed;
+	//this->defineDist();
+	//this->defineLimit();
 }
 
 int Road::getDist(){

@@ -9,9 +9,12 @@ int main(){
 
 	Menu m1;
 	
-	m1.calculatePaths();
+	while(!m1.terminate){
+		m1.initialOptions();
+	}
 
 	cout << "\n-----/////-----\n";
+	cout << "\nClose the GraphViewer window to terminate";
 
 	cin.get();
 	cin.get();

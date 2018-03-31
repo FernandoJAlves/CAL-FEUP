@@ -73,6 +73,7 @@ void Map::read_roads(){
 	string line;
 	string index,name,bidirectional,maxspeed;
 	int i,ms;
+	Road * r;
 	bool bd;
 	if(file.is_open()){
 		while(getline(file,line)){
@@ -99,6 +100,11 @@ void Map::read_roads(){
 				ms = stoi(maxspeed);
 			}
 			this->roads[i-1]->setInfo(name,bd,ms);
+			r = new Road(this->roads[i-1]->dest,this->roads[i-1]->src);
+			r->setInfo(name,bd,ms);
+			this->nodes[this->roads[i-1]->dest->index]->addRoad(r);
+			this->roads.push_back(r);
+
 		}
 		file.close();
 	}
@@ -122,8 +128,10 @@ void Map::draw_map(){
 	
 
 	for(unsigned int i = 0; i < this->roads.size();i++){
-		gv->addEdge(i,this->roads.at(i)->src->index,this->roads.at(i)->dest->index,EdgeType::UNDIRECTED);
-		gv->setEdgeLabel(i, "Teste");
+		gv->addEdge(i,this->roads.at(i)->src->index,this->roads.at(i)->dest->index,EdgeType::DIRECTED);
+		stringstream temp;
+		temp << i;
+		gv->setEdgeLabel(i, temp.str());
 	}
 	gv->rearrange();
 
@@ -217,6 +225,28 @@ vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int 
 
 }
 
+vector<unsigned int> Map::getPath_secure(const unsigned int origin, const unsigned int dest) const{
+
+	vector<unsigned int> temp;
+	Node * v1 = this->findNode(dest);
+	Node * last = v1->path;
+
+	while(last != NULL){
+		temp.push_back(last->index);
+		last = last->path;
+	}
+
+	vector<unsigned int> res;
+
+	for(int i = temp.size()-1; i >= 0; i--){
+		res.push_back(temp.at(i));
+	}
+	res.push_back(dest);
+
+	return res;
+
+}
+
 
 void Map::setAccessRoad(unsigned int index, bool value){
 	this->roads.at(index)->setAccess(value);
@@ -230,3 +260,19 @@ void Map::printRoads(){
 }
 
 
+bool Map::incrementCounter(vector<unsigned int> v1){
+	bool recalculate = false;
+	unsigned int index;
+	for(unsigned int i = 0; i < v1.size(); i++){
+		index = v1.at(i);
+		this->roads.at(index)->car_count++;
+
+		//se +90% de capacidade nesta road
+		if((this->roads.at(index)->car_count) > (this->roads.at(index)->limit) * 0.9){
+			recalculate = true;
+			this->setAccessRoad(index, false);
+		}
+	}
+
+	return recalculate;
+}
