@@ -7,10 +7,12 @@
 #define ARRAY_CAR	5000
 
 class Menu{
+	private:
+	Map m;
 
 public:
 	bool terminate = false;
-	Menu(){}
+	Menu();
 
 	void initialOptions();
 	void calculatePaths();

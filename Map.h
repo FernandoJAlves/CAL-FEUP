@@ -19,6 +19,8 @@ public:
 	void read_subroads();
 	void read_roads();
 	void draw_map();
+	void createWindow();
+	void closeWindow();
 
 
 //Novos metodos a implementar

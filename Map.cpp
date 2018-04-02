@@ -14,11 +14,19 @@ using namespace std;
 
 Map::Map(){
 	gv = new GraphViewer(600, 600, false);
+	this->read();
+
+}
+
+void Map::createWindow(){
 	gv->createWindow(600, 600);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
-	this->read();
 	this->draw_map();
+}
+
+void Map::closeWindow(){
+	gv->closeWindow();
 }
 
 void Map::read_nodes(){

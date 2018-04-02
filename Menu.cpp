@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 
+Menu::Menu(){}
 
 void Menu::initialOptions(){
 
@@ -26,11 +27,15 @@ void Menu::initialOptions(){
 			break;
 		case 2:
 			this->terminate = true;
+			cout << "The program will terminate. Press Enter to continue" << endl;
+			cin.get();
+			cin.get();
 			break;
 		default:
 			cout << "Invalid input!\n";
 			cin.get();
 	}
+
 
 
 }
@@ -54,7 +59,7 @@ void Menu::calculatePaths(){
 	//Quando terminarem os Cars, mostrar o output de alguma forma
 
 
-	Map m;
+	m.createWindow();
 
 /* //TESTING
 	for(auto it : m.roads){
@@ -83,6 +88,8 @@ void Menu::calculatePaths(){
 	}
 	else{
 		cin.get();
+		cin.get();
+		m.closeWindow();
 		return;
 	}
 
@@ -101,6 +108,9 @@ void Menu::calculatePaths(){
 	}
 	else{
 		cout << "Invalid input!\n";
+		cin.get();
+		cin.get();
+		m.closeWindow();
 		return;
 	}
 
@@ -116,7 +126,9 @@ void Menu::calculatePaths(){
 			cout << v2.at(i) << " -> ";
 		}
 		cout << v2.at(v2.size()-1);
+
 	}
+	cout << endl << "Press Enter to return to the menu" << endl;
 
 
 /*
@@ -165,6 +177,9 @@ void Menu::calculatePaths(){
 	}
 
 */
+	cin.get();
+	cin.get();
+	m.closeWindow();
 	
 }
 

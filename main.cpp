@@ -13,12 +13,5 @@ int main(){
 		m1.initialOptions();
 	}
 
-	cout << "\n-----/////-----\n";
-	cout << "\nClose the GraphViewer window to terminate";
-
-	cin.get();
-	cin.get();
-	cin.get();
-
 	return 0;
 }
