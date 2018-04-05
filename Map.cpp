@@ -109,11 +109,12 @@ void Map::read_roads(){
 				ms = stoi(maxspeed);
 			}
 			this->roads[i-1]->setInfo(name,bd,ms);
-			r = new Road(this->roads[i-1]->dest,this->roads[i-1]->src);
-			r->setInfo(name,bd,ms);
-			this->nodes[this->roads[i-1]->dest->index]->addRoad(r);
-			this->roads.push_back(r);
-
+			if(bd){
+				r = new Road(this->roads[i-1]->dest,this->roads[i-1]->src);
+				r->setInfo(name,bd,ms);
+				this->nodes[this->roads[i-1]->dest->index]->addRoad(r);
+				this->roads.push_back(r);
+			}
 		}
 		file.close();
 	}
@@ -134,7 +135,7 @@ void Map::draw_map(){
 		gv->addNode(it->index, it->x, it->y);
 	}
 	gv->rearrange();
-	
+
 
 	for(unsigned int i = 0; i < this->roads.size();i++){
 		gv->addEdge(i,this->roads.at(i)->src->index,this->roads.at(i)->dest->index,EdgeType::DIRECTED);
