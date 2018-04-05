@@ -1,60 +1,87 @@
-1;;False;
-14;;False;
-31;;False;
-32;;False;
+1;Rua de Ramalho Ortigão;False;
+3;Rua da Conceição;False;
+5;Rua de José Falcão;False;
+10;Rua de Avis;False;
+13;Rua de Carlos Alberto;True;
+15;Rua do Bonjardim;False;
 38;;False;
-48;;False;60
-53;;False;
-73;Rua de Ramalho Ortigão;False;
-75;Rua da Conceição;False;
-77;Rua de José Falcão;False;
-82;Rua de Avis;False;
-85;Rua da Maternidade;False;
-86;Rua do Rosário;False;
-99;Rua do Breiner;False;
-102;Praça da República;False;
-117;Rua Álvares Cabral;False;
-120;Rua dos Bragas;False;
-125;;False;
-127;Rua da Boa Hora;False;
-131;Rua do Padre Cruz;False;
-133;Rua de Carlos Alberto;True;
-135;Rua da Boavista;False;PT:urban
-144;Rua da Regeneração;False;
-146;Rua do Alferes Malheiro;False;
-149;Rua de Fernandes Tomás;False;
-155;Rua do Bonjardim;False;
-178;Rua da Firmeza;False;
-187;Rua da Alegria;False;PT:urban
-190;Rua Dom Agostinho de Jesus e Sousa;False;
-204;Rua de Rodolfo de Araújo;False;
-212;Rua Doutor Alves da Veiga;False;
-217;Rua das Carvalheiras;False;
-223;Rua da Escola Normal;False;
-227;Rua Santa Catarina;False;PT:urban
-230;Rua Dom João IV;False;
-234;Travessa de Anselmo Braancamp;False;
-236;Rua das Condominhas;True;
-248;Rua do Ouro;True;
-283;;False;
-300;;False;
-301;Via Panorâmica;False;
-331;Viaduto do Cais das Pedras;True;
-340;Rua Ferreira Borges;False;50
-350;Ponte da Arrábida;False;90
-351;Avenida de Sidónio Pais;False;
-356;Rua do Padre Américo;True;
-388;;False;
-392;Rua 5 de Outubro;False;
-394;Estrada da Circunvalação;False;40
-397;;False;
-411;Radial de Gondomar;False;
-419;Radial de Gondomar;False;
-460;;False;
-466;;False;50
-486;;False;
-500;;False;
+41;Rua de São Filipe de Nery;False;
+54;Rua Doutor Ferreira da Silva;True;
+58;Campo dos Mártires da Pátria;False;
+68;Rua dos Clérigos;False;
+77;Rua de Clemente Meneres;False;
+91;Rua de Alexandre Herculano;False;
+98;Rua de Entreparedes;False;
+104;Rua Cândido dos Reis;False;
+113;Rua da Galeria de Paris;False;50
+118;Rua Arquitecto Nicolau Nasoni;False;
+124;Rua do Bonjardim;False;20
+134;Praça Guilherme Gomes Fernandes;False;
+142;Rua Doutor Tiago de Almeida;False;
+150;Túnel dos Almadas;False;
+151;Rua Elísio de Melo;False;
+154;Rua de Dom João I;False;
+159;Rua de Trás;False;
+162;Rua da Vitória;False;
+180;Rua Professor Vicente José de Carvalho;False;
+182;Rua Diogo Brandão;False;
+183;Rua do General Silveira;False;
+186;Rua Sá de Noronha;False;
+193;;False;
+196;Rua de Augusto Rosa;False;
+211;Rua do Almada;False;50
+222;Rua do Carmo;False;
+223;Rua das Oliveiras;False;
+231;;False;20
+232;Rua Ateneu Comercial do Porto;False;
+238;Rua do Conde de Vizela;False;
+243;Rua de Sampaio Bruno;False;20
+250;Largo da Porta do Olival;False;
+254;Rua dos Caldeireiros;False;50
+264;Travessa de São Bartolomeu;True;50
+265;Rua Doutor Barbosa de Castro;False;
+282;Rua de Azevedo de Albuquerque;False;
+290;Passeio das Virtudes;False;
+302;Rua do Ferraz;False;
+308;Rua dos Pelames;True;40
+315;Rua Professor Vicente José de Carvalho;True;
+318;Rua de Miguel Bombarda;False;
+321;Rua de Ricardo Jorge;False;
+328;Rua da Picaria;False;
+332;Rua Doutor António Luís Gomes;False;
+342;Rua do Clube dos Fenianos;False;
+354;;True;
+361;Rua de Alexandre Braga;False;
+364;Praça Gen. Humberto Delgado;False;50
+369;Rua Formosa;False;
+377;Rua de São Bento da Vitória;False;
+382;Rua Sá de Noronha;False;
+387;;False;
+389;Rua de Ceuta;False;
+397;Rua da Madeira;True;
+403;;True;
+408;;True;
+412;Praça de Carlos Alberto;False;
+426;Rua do Pinheiro;False;
+429;Rua de Santa Catarina;False;PT:urban
+432;Rua de Passos Manuel;False;
+444;Rua 31 de Janeiro;False;
+451;;False;
+453;;False;
+462;;False;
+470;;False;
+471;;False;
+474;Rua da Fábrica;False;
+476;Rua Doutor Magalhães Lemos;False;50
+482;Rua de José Falcão;False;
+483;Rua do Loureiro;True;
+485;Rua de Santa Teresa;False;
+486;Rua Actor João Guedes;False;
+492;;False;
+495;;False;
+498;;False;
 503;;False;
+<<<<<<< HEAD
 509;;False;
 528;;False;
 553;;False;
@@ -5219,3 +5246,155 @@
 30413;;False;
 30415;;True;
 30416;;True;
+=======
+507;;False;
+512;;False;
+515;Rua de São Filipe de Nery;False;
+521;Travessa do Carregal;False;
+524;Rua de Fernandes Tomás;False;
+534;Rua do Bolhão;False;
+536;Túnel dos Almadas;False;
+540;Travessa Rua Formosa;False;
+545;Pátio do Bonjardim;True;
+554;Rua Rodrigues Sampaio;False;50
+556;Praça de Almeida Garrett;False;50
+559;Travessa de Passos Manuel;True;
+566;Travessa de Cimo de Vila;False;
+568;Beco Passos Manuel;True;
+572;Rua do Corpo da Guarda;True;
+586;Praça de Almeida Garrett;False;50
+589;Praça da Batalha;False;50
+608;Rua das Taipas;False;
+625;;False;
+628;;False;
+634;;False;
+640;Campo dos Mártires da Pátria;False;
+643;Praça da Liberdade;False;50
+651;Avenida dos Aliados;False;50
+659;;False;
+661;Rua da Fábrica;False;
+663;Praça Dona Filipa de Lencastre;False;50
+666;;False;
+674;Rua das Carmelitas;False;sign
+682;Rua das Carmelitas;False;
+692;Praça Gomes Teixeira;False;
+696;;False;
+704;;False;
+707;;False;
+708;Rua de Carlos Alberto;False;
+713;;False;
+716;;False;
+721;Rua de Carlos Alberto;False;
+725;Rua Doutor António Sousa Macedo;False;
+736;Rua da Laje;False;
+737;Rua de Mouzinho da Silveira;True;50
+744;Rua Trindade Coelho;False;
+747;Praça de Gomes Teixeira;False;
+756;Avenida dos Aliados;False;50
+763;Praça da Liberdade;False;50
+771;Rua de Sá da Bandeira;True;50
+775;Rua da Madeira;True;
+786;;True;
+789;Rua Doutor António E. Magalhães;False;
+790;;False;
+793;Travessa da Rua Formosa;False;
+794;Rua de Rodrigues Sampaio;True;50
+795;;False;
+800;;False;
+804;;False;
+805;;False;
+808;Rua Guilherme da Costa Carvalho;False;50
+812;;False;20
+819;;False;20
+820;;True;
+828;;True;
+834;;True;
+840;;True;
+850;;False;
+854;Rua do Estêvão;False;
+862;;False;
+867;Largo de Mompilher;False;
+868;Largo de Mompilher;False;
+872;;True;
+875;;True;
+877;;True;
+881;;True;
+886;;True;
+899;;True;
+907;;True;
+908;;True;
+909;;True;
+918;;True;
+921;;True;
+922;Rua de Carlos Alberto;False;
+924;Rua de Carlos Alberto;False;
+926;;False;
+931;Praça de Carlos Alberto;False;
+933;Travessa do Carregal;False;
+941;Calçada do Carregal;True;
+943;Túnel dos Almadas;False;
+951;Rua de Sá da Bandeira;True;50
+954;;False;
+956;Rua Ateneu Comercial do Porto;False;
+957;Rua do Carmo;False;
+961;Rua do Carmo;False;
+966;Rua da Restauração;False;
+971;Travessa do Cativo;False;
+972;Ilha;False;
+973;;False;
+980;Largo dos Lóios;False;
+987;Rua de Mouzinho da Silveira;True;50
+991;;False;
+998;;False;
+1000;Praça de Almeida Garrett;False;
+1006;;False;
+1009;Praça de Almeida Garrett;False;50
+1012;;True;
+1014;;True;
+1016;Avenida Dom Afonso Henriques;True;
+1017;Avenida Dom Afonso Henriques;True;
+1022;Rua Trindade Coelho;True;
+1023;;False;
+1026;;False;
+1032;;False;
+1034;;False;
+1036;;False;
+1039;;False;
+1043;;False;
+1047;;True;
+1048;;True;
+1049;Travessa da Rua Formosa;True;
+1051;;True;
+1053;Praça de Carlos Alberto;False;
+1055;Praça de Carlos Alberto;False;
+1060;Rua dos Caldeireiros;False;50
+1061;Rua Formosa;False;
+1063;;False;
+1065;Largo do Pinheiro;False;
+1066;Largo do Pinheiro;False;
+1068;Rua do Bonjardim;True;20
+1077;;True;
+1078;Rua de Cimo de Vila;False;
+1084;;True;
+1085;;True;
+1086;;True;
+1088;;False;
+1096;Rua Doutor Ferreira da Silva;True;
+1097;Avenida dos Aliados;False;50
+1107;Rua de Fernandes Tomás;False;
+1109;Rua de Sá da Bandeira;True;50
+1115;Rua Formosa;False;
+1118;Rua de Sá da Bandeira;True;50
+1121;Praça de Almeida Garrett;False;
+1123;Rua de Sá da Bandeira;False;50
+1140;Rua da Madeira;True;
+1143;Rua do Loureiro;False;
+1153;;False;
+1158;;False;
+1159;;False;
+1160;;False;
+1163;;False;
+1165;;False;
+1171;;False;
+1175;;False;
+>>>>>>> refs/remotes/origin/master
