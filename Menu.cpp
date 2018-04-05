@@ -15,7 +15,7 @@ void Menu::initialOptions(){
 	cout << "|     2 - Exit                   |" << endl;
 	cout << "|                                |" << endl;
 	cout << "+--------------------------------+" << endl;
-	
+
 	int opcao;
 
 	cout << "Your option: ";
@@ -76,7 +76,7 @@ void Menu::calculatePaths(){
 	cout << "Index of the destination node: ";
 	cin >> dest;
 
-	
+
 	m.dijkstraShortestPath_modified(origin);
 	vector<unsigned int> v1 = m.getPath(origin, dest);
 
@@ -93,11 +93,8 @@ void Menu::calculatePaths(){
 		return;
 	}
 
-
-	//TODO Gonçalo -> Chama aqui a função de pintar o percurso. Os indices dos nodes
-	//				  são os elementos do vetor v1 (acho que basta os nodes, no mapa
-	//				  quase nem se vê as arestas por estarem muito perto os nodes)
-
+	//Já com o re-arrange 
+	paint_path(getPath_secure(v1));
 
 	unsigned int acidente;
 	cout << "\nIndique a aresta onde se localiza o acidente: ";
@@ -180,6 +177,5 @@ void Menu::calculatePaths(){
 	cin.get();
 	cin.get();
 	m.closeWindow();
-	
-}
 
+}

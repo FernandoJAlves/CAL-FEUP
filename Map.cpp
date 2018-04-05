@@ -13,16 +13,15 @@
 using namespace std;
 
 Map::Map(){
-	gv = new GraphViewer(1000, 1000, false);
-	gv->setBackground("map.png");
+	gv = new GraphViewer(5000, 5000, false);
 	this->read();
 
 }
 
 void Map::createWindow(){
-	gv->createWindow(1000, 1000);
+	gv->createWindow(5000, 5000);
 	gv->defineVertexColor("blue");
-	gv->defineVertexSize(30);
+	gv->defineVertexSize(1);
 	gv->defineEdgeColor("black");
 	this->draw_map();
 }
@@ -91,7 +90,7 @@ void Map::read_roads(){
 			getline(ss,index,';');
 			getline(ss,name,';');
 			getline(ss,bidirectional,';');
-			getline(ss,maxspeed,'\n');
+			getline(ss,maxspeed,';');
 			ss.clear();
 			i = stoi(index);
 			if(bidirectional == "TRUE"){
@@ -103,19 +102,18 @@ void Map::read_roads(){
 			if(maxspeed == "PT:urban\r"){
 				ms = 50;
 			}
-			else if(maxspeed == "\r"){
+			else if(maxspeed == "" || maxspeed == "\r"){
 				ms = 20;
 			}
 			else{
 				ms = stoi(maxspeed);
 			}
 			this->roads[i-1]->setInfo(name,bd,ms);
-			if(bd){
-				r = new Road(this->roads[i-1]->dest,this->roads[i-1]->src);
-				r->setInfo(name,bd,ms);
-				this->nodes[this->roads[i-1]->dest->index]->addRoad(r);
-				this->roads.push_back(r);
-			}
+			r = new Road(this->roads[i-1]->dest,this->roads[i-1]->src);
+			r->setInfo(name,bd,ms);
+			this->nodes[this->roads[i-1]->dest->index]->addRoad(r);
+			this->roads.push_back(r);
+
 		}
 		file.close();
 	}
@@ -286,4 +284,14 @@ bool Map::incrementCounter(vector<unsigned int> v1){
 	}
 
 	return recalculate;
+}
+
+void Map::paint_path(vector<unsigned int> path) {
+	for(int i = 0; i < path.size() - 1; i++) {
+		gv->setEdgeThickness(path.at(i), 2);
+		gv->setEdgeColor(path.at(i), "YELLOW");
+	}
+// Se sempre quiserm um icone para diferencer o inicio do fim, fica só a faltar um parametrozito
+//	gv->setVertexIcon(path.at(0),)
+	gv->rearrange();
 }
