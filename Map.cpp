@@ -13,15 +13,15 @@
 using namespace std;
 
 Map::Map(){
-	gv = new GraphViewer(5000, 5000, false);
+	gv = new GraphViewer(1000, 1000, false);
 	this->read();
 
 }
 
 void Map::createWindow(){
-	gv->createWindow(5000, 5000);
+	gv->createWindow(600, 600);
 	gv->defineVertexColor("blue");
-	gv->defineVertexSize(1);
+	gv->defineVertexSize(30);
 	gv->defineEdgeColor("black");
 	this->draw_map();
 }
