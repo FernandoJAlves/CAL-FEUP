@@ -642,6 +642,7 @@ namespace OpenStreetMapsParser
                             actualRoad = -1;
                             lastNode = -1;
                             actualRoadName = "";
+                            maxspeed = "";
                             actualRoadType = null;
                             tempSubRoads.Clear();
 
