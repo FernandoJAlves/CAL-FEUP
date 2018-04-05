@@ -14,7 +14,7 @@ using namespace std;
 
 Map::Map(){
 	gv = new GraphViewer(1000, 1000, false);
-	gv->setBackground("map.png");
+	gv->setBackground("maps/map.png");
 	this->read();
 
 }

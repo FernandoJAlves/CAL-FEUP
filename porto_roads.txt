@@ -109,7 +109,7 @@
 661;Rua da Fábrica;False;
 663;Praça Dona Filipa de Lencastre;False;50
 666;;False;
-674;Rua das Carmelitas;False;sign
+674;Rua das Carmelitas;False;
 682;Rua das Carmelitas;False;
 692;Praça Gomes Teixeira;False;
 696;;False;
