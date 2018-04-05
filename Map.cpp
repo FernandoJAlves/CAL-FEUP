@@ -14,12 +14,13 @@ using namespace std;
 
 Map::Map(){
 	gv = new GraphViewer(1000, 1000, false);
+	gv->setBackground("map.png");
 	this->read();
 
 }
 
 void Map::createWindow(){
-	gv->createWindow(600, 600);
+	gv->createWindow(1000, 1000);
 	gv->defineVertexColor("blue");
 	gv->defineVertexSize(30);
 	gv->defineEdgeColor("black");
@@ -90,7 +91,7 @@ void Map::read_roads(){
 			getline(ss,index,';');
 			getline(ss,name,';');
 			getline(ss,bidirectional,';');
-			getline(ss,maxspeed,';');
+			getline(ss,maxspeed,'\n');
 			ss.clear();
 			i = stoi(index);
 			if(bidirectional == "TRUE"){
@@ -102,7 +103,7 @@ void Map::read_roads(){
 			if(maxspeed == "PT:urban\r"){
 				ms = 50;
 			}
-			else if(maxspeed == "" || maxspeed == "\r"){
+			else if(maxspeed == "\r"){
 				ms = 20;
 			}
 			else{
