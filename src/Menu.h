@@ -6,6 +6,12 @@
 
 #define ARRAY_CAR	5000
 
+#if __linux__
+#define clearScreen() system("clear")
+#else
+#define clearScreen() system("cls")
+#endif
+
 class Menu{
 	private:
 	Map m;

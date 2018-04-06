@@ -15,6 +15,7 @@ private:
 public:
 	Map();
 	void read();
+	void read_mperp();
 	void read_nodes();
 	void read_subroads();
 	void read_roads();

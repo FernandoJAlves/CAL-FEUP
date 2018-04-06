@@ -6,29 +6,46 @@
 
 #include "MutablePriorityQueueNode.h"
 
-#define NODES_PATH "porto_nodes.txt"
-#define ROADS_PATH "porto_roads.txt"
-#define SUBROADS_PATH "porto_subroads.txt"
+#define MPERP_PATH "graph/porto_mperp.txt"
+#define NODES_PATH "graph/porto_nodes.txt"
+#define ROADS_PATH "graph/porto_roads.txt"
+#define SUBROADS_PATH "graph/porto_subroads.txt"
 
 using namespace std;
 
+double y_pix, x_pix;
+
 Map::Map(){
-	gv = new GraphViewer(1000, 1000, false);
+	gv = new GraphViewer(1406, 968, false);
 	gv->setBackground("maps/map.png");
 	this->read();
 
 }
 
 void Map::createWindow(){
-	gv->createWindow(1000, 1000);
+	gv->createWindow(1406, 968);
+	gv->defineVertexSize(1);
 	gv->defineVertexColor("blue");
-	gv->defineVertexSize(30);
 	gv->defineEdgeColor("black");
 	this->draw_map();
+	gv->rearrange();
 }
 
 void Map::closeWindow(){
 	gv->closeWindow();
+}
+
+void Map::read_mperp(){
+	ifstream file(MPERP_PATH);
+	if(file.is_open()){
+		file >> x_pix;
+		file >> y_pix;
+		cout << x_pix << " " << y_pix << endl;
+	}
+	else{
+		cout << "Error opening the meters per pixel file" << endl;
+	}
+
 }
 
 void Map::read_nodes(){
@@ -42,7 +59,7 @@ void Map::read_nodes(){
 			ss << line;
 			ss >> index >> comma >> x >> comma >> y;
 			ss.clear();
-			nodes.push_back(new Node(x,y,(index-1)));
+			nodes.push_back(new Node(x,y-400,(index-1)));
 		}
 		file.close();
 	}
@@ -125,6 +142,7 @@ void Map::read_roads(){
 }
 
 void Map::read(){
+	read_mperp();
 	read_nodes();
 	read_subroads();
 	read_roads();

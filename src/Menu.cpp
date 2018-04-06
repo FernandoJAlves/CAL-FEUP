@@ -6,7 +6,7 @@
 Menu::Menu(){}
 
 void Menu::initialOptions(){
-
+	clearScreen();
 	cout << endl;
 	cout << "+--------------------------------+" << endl;
 	cout << "|      Initial Options Menu      |" << endl;
@@ -27,8 +27,7 @@ void Menu::initialOptions(){
 			break;
 		case 2:
 			this->terminate = true;
-			cout << "The program will terminate. Press Enter to continue" << endl;
-			cin.get();
+			cout << "The program will terminate. Thank you for choosing our service" << endl;
 			cin.get();
 			break;
 		default:
@@ -128,7 +127,7 @@ void Menu::calculatePaths(){
 		cout << v2.at(v2.size()-1);
 
 	}
-	cout << endl << "Press Enter to return to the menu" << endl;
+	cout << endl << "Press Enter to return" << endl;
 
 
 /*
@@ -177,7 +176,6 @@ void Menu::calculatePaths(){
 	}
 
 */
-	cin.get();
 	cin.get();
 	m.closeWindow();
 	
