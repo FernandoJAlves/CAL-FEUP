@@ -93,7 +93,7 @@ void Menu::calculatePaths(){
 	}
 
 	//Já com o re-arrange 
-	paint_path(getPath_secure(v1));
+	m.paint_path(v1);
 
 	unsigned int acidente;
 	cout << "\nIndique a aresta onde se localiza o acidente: ";
@@ -173,6 +173,7 @@ void Menu::calculatePaths(){
 	}
 
 */
+	cin.get();
 	cin.get();
 	m.closeWindow();
 

@@ -31,6 +31,7 @@ public:
 	vector<unsigned int> getPath_secure(const unsigned int origin, const unsigned int dest) const;
 	void setAccessRoad(unsigned int index, bool value);
 	bool incrementCounter(vector<unsigned int> v1);
+	void paint_path(vector<unsigned int> path);
 
 //Metodos para teste
 	void printRoads();

@@ -23,18 +23,10 @@ Map::Map(){
 }
 
 void Map::createWindow(){
-<<<<<<< HEAD:src/Map.cpp
 	gv->createWindow(1406, 968);
-	gv->defineVertexSize(1);
 	gv->defineVertexColor("blue");
-=======
-	gv->createWindow(5000, 5000);
-	gv->defineVertexColor("blue");
-	gv->defineVertexSize(1);
->>>>>>> refs/remotes/origin/master:Map.cpp
 	gv->defineEdgeColor("black");
 	this->draw_map();
-	gv->rearrange();
 }
 
 void Map::closeWindow(){
@@ -46,7 +38,6 @@ void Map::read_mperp(){
 	if(file.is_open()){
 		file >> x_pix;
 		file >> y_pix;
-		cout << x_pix << " " << y_pix << endl;
 	}
 	else{
 		cout << "Error opening the meters per pixel file" << endl;
@@ -65,7 +56,7 @@ void Map::read_nodes(){
 			ss << line;
 			ss >> index >> comma >> x >> comma >> y;
 			ss.clear();
-			nodes.push_back(new Node(x,y-400,(index-1)));
+			nodes.push_back(new Node(x,y,(index-1)));
 		}
 		file.close();
 	}
@@ -157,6 +148,9 @@ void Map::read(){
 void Map::draw_map(){
 	for(auto it : this->nodes){
 		gv->addNode(it->index, it->x, it->y);
+		//gv->setVertexIcon(it->index,"res/icon.gif");
+		gv->setVertexSize(it->index,10);
+
 	}
 	gv->rearrange();
 
@@ -167,8 +161,8 @@ void Map::draw_map(){
 		temp << i;
 		gv->setEdgeLabel(i, temp.str());
 	}
+	gv->addNode(9999,1,1);
 	gv->rearrange();
-
 }
 
 
@@ -312,7 +306,7 @@ bool Map::incrementCounter(vector<unsigned int> v1){
 }
 
 void Map::paint_path(vector<unsigned int> path) {
-	for(int i = 0; i < path.size() - 1; i++) {
+	for(unsigned int i = 0; i < path.size() - 1; i++) {
 		gv->setEdgeThickness(path.at(i), 2);
 		gv->setEdgeColor(path.at(i), "YELLOW");
 	}
