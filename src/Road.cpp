@@ -5,15 +5,14 @@
 Road::Road(Node * src, Node * dest):bidirectional(false),src(src),dest(dest)
 {
 	this->defineDist();
-	this->defineLimit();
+	//this->defineLimit();
 }
 
 void Road::setInfo(std::string name, bool bidirectional, int maxspeed){
 	this->name = name;
 	this->bidirectional = bidirectional;
 	this->maxspeed = maxspeed;
-	//this->defineDist();
-	//this->defineLimit();
+	this->defineLimit();
 }
 
 int Road::getDist(){

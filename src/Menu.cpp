@@ -59,11 +59,12 @@ void Menu::calculatePaths(){
 
 
 	m.createWindow();
-
-/* //TESTING
-	for(auto it : m.roads){
-		cout << it->limit << endl;
+/*
+ //TESTING
+	for(int i = 0; i < 950; i++){
+		cout << m.roads.at(i)->limit << endl;
 	}
+	//cin.get();
 */
 
 	unsigned int origin, dest;
