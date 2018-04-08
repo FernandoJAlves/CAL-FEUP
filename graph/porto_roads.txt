@@ -1,4 +1,4 @@
-﻿1;Rua de Ramalho Ortigão;False;
+1;Rua de Ramalho Ortigão;False;
 3;Rua da Conceição;False;
 5;Rua de José Falcão;False;
 10;Rua de Avis;False;
@@ -586,7 +586,7 @@
 3279;Rua da Fábrica;False;
 3281;Praça Dona Filipa de Lencastre;False;50
 3284;;False;
-3292;Rua das Carmelitas;False;
+3292;Rua das Carmelitas;False;sign
 3300;Rua das Carmelitas;False;
 3310;Praça Gomes Teixeira;False;
 3314;;False;
