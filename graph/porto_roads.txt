@@ -266,7 +266,7 @@
 1740;Rua Manuel Carqueja;False;
 1743;Rua de Francisco Carqueja;False;
 1747;Rua Bento Carqueja;False;
-1749;Rua do Conde de Burnay;False;sign
+1749;Rua do Conde de Burnay;False;
 1753;Rua Cunha Espinheira;False;
 1756;Rua Doutor Alberto de Aguiar;False;
 1761;Rua Câmara Pestana;False;
@@ -1651,7 +1651,7 @@
 9328;Rua da Fábrica;False;
 9330;Praça Dona Filipa de Lencastre;False;50
 9333;;False;
-9341;Rua das Carmelitas;False;sign
+9341;Rua das Carmelitas;False;
 9349;Rua das Carmelitas;False;
 9359;Praça Gomes Teixeira;False;
 9363;;False;
