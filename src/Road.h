@@ -41,12 +41,9 @@ public:
   Node * getDest();
   void defineLimit();
   void defineDist();
+  static void set_XY(double x, double y);
 
 
-  void set_XY(double x, double y){
-    x_meter = x;
-    y_meter = y;
-  }
 
 
   friend class Map;

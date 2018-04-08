@@ -47,9 +47,7 @@ void Map::read_mperp(){
 		cout << "Error opening the meters per pixel file" << endl;
 	}
 
-	Road r;
-	r.set_XY(x_pix, y_pix);
-	//cout << r.x_meter << endl << r.y_meter << endl;
+	Road::set_XY(x_pix, y_pix);
 
 	x_pix = x_pix/SCALE;
 	y_pix = y_pix/SCALE;

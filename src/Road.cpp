@@ -52,3 +52,8 @@ void Road::defineLimit(){
 void Road::defineDist(){
 	this->dist_weight = sqrt(pow(this->x_meter * (this->src->getX() - this->dest->getX()),2)+pow(this->y_meter * (this->src->getY() - this->dest->getY()),2));
 }
+
+void Road::set_XY(double x, double y){
+    x_meter = x;
+    y_meter = y;
+  }
