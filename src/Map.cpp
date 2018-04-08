@@ -15,10 +15,9 @@
 #define HEIGHT 989
 #define SCALE 3
 
+double x_pix, y_pix;
 
 using namespace std;
-
-double y_pix, x_pix;
 
 Map::Map(){
 	gv = new GraphViewer(WIDTH, HEIGHT, false);
@@ -47,6 +46,11 @@ void Map::read_mperp(){
 	else{
 		cout << "Error opening the meters per pixel file" << endl;
 	}
+
+	Road r;
+	r.set_XY(x_pix, y_pix);
+	//cout << r.x_meter << endl << r.y_meter << endl;
+
 	x_pix = x_pix/SCALE;
 	y_pix = y_pix/SCALE;
 

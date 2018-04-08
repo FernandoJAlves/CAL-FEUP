@@ -12,6 +12,7 @@ private:
 	GraphViewer *gv;
 	std::vector<Node*> nodes;
 	std::vector<Road*> roads;
+
 public:
 	Map();
 	void read();

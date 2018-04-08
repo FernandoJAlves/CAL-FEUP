@@ -2,7 +2,10 @@
 #include <iostream>
 #include <cmath>
 
-Road::Road(Node * src, Node * dest):bidirectional(false),src(src),dest(dest)
+double Road::x_meter = 1;
+double Road::y_meter = 1;
+
+Road::Road(Node * src, Node * dest):bidirectional(false),maxspeed(20),src(src),dest(dest)
 {
 	this->defineDist();
 	//this->defineLimit();
@@ -47,5 +50,5 @@ void Road::defineLimit(){
 }
 
 void Road::defineDist(){
-	this->dist_weight = sqrt(pow(this->src->getX() - this->dest->getX(),2)+pow(this->src->getY() - this->dest->getY(),2));
+	this->dist_weight = sqrt(pow(this->x_meter * (this->src->getX() - this->dest->getX()),2)+pow(this->y_meter * (this->src->getY() - this->dest->getY()),2));
 }

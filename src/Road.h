@@ -22,7 +22,13 @@ private:
   Node * src;
   Node * dest;
 public:
+
+  Road(){};
   Road(Node * src, Node * dest);
+
+  static double x_meter;
+  static double y_meter;
+
   void setInfo(std::string name, bool bidirectional, int maxspeed);
   int getDist();
   std::string getName();
@@ -36,10 +42,16 @@ public:
   void defineLimit();
   void defineDist();
 
+
+  void set_XY(double x, double y){
+    x_meter = x;
+    y_meter = y;
+  }
+
+
   friend class Map;
   friend class Menu;
   
 };
-
 
 #endif

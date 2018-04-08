@@ -59,13 +59,54 @@ void Menu::calculatePaths(){
 
 
 	m.createWindow();
-/*
+
+
  //TESTING
+
 	for(int i = 0; i < 950; i++){
-		cout << m.roads.at(i)->limit << endl;
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
 	}
-	//cin.get();
+	cin.get();
+	cin.get();
+	for(int i = 950; i < 1950; i++){
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
+	}
+	cin.get();
+	cin.get();
+	for(int i = 1950; i < 2950; i++){
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
+	}
+	cin.get();
+	cin.get();
+	for(int i = 2950; i < 3950; i++){
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
+	}
+	cin.get();
+	cin.get();
+	for(int i = 3950; i < 4950; i++){
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
+	}
+	cin.get();
+	cin.get();
+	for(int i = 4950; i < 5950; i++){
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
+	}
+	cin.get();
+	cin.get();
+	for(int i = 5950; i < 6950; i++){
+		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
+	}
+	cin.get();
+	cin.get();
+
+/*
+	for(int i = 6950; i < m.roads.size(); i++){
+		cout << i << ": " << m.roads.at(i)->maxspeed << endl;
+	}
+	cin.get();
+	cin.get();
 */
+
 
 	unsigned int origin, dest;
 
