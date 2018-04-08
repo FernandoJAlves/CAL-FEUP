@@ -10,12 +10,9 @@
 #define NODES_PATH "graph/porto_nodes.txt"
 #define ROADS_PATH "graph/porto_roads.txt"
 #define SUBROADS_PATH "graph/porto_subroads.txt"
-#define MAP1_11000_PATH "maps/map1_11000.png"
-#define MAP1_19000_PATH "maps/map1_19000.png"
-#define MAP1_11000_WIDTH 2261
-#define MAP1_11000_HEIGHT 1721
-#define MAP1_19000_WIDTH 1309
-#define MAP1_19000_HEIGHT 996
+#define MAP_PATH "maps/map.png"
+#define WIDTH 1216
+#define HEIGHT 989
 
 
 using namespace std;
@@ -23,14 +20,14 @@ using namespace std;
 double y_pix, x_pix;
 
 Map::Map(){
-	gv = new GraphViewer(MAP1_11000_WIDTH, MAP1_11000_HEIGHT, false);
-	gv->setBackground(MAP1_11000_PATH);
+	gv = new GraphViewer(WIDTH, HEIGHT, false);
+	gv->setBackground(MAP_PATH);
 	this->read();
 
 }
 
 void Map::createWindow(){
-	gv->createWindow(MAP1_11000_WIDTH, MAP1_11000_HEIGHT);
+	gv->createWindow(WIDTH, HEIGHT);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	this->draw_map();
@@ -156,7 +153,7 @@ void Map::read(){
 
 void Map::draw_map(){
 	for(auto it : this->nodes){
-		gv->addNode(it->index, it->x*x_pix, it->y*y_pix);
+		gv->addNode(it->index, it->x, it->y);
 		//gv->setVertexIcon(it->index,"res/icon.gif");
 		gv->setVertexSize(it->index,10);
 

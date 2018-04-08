@@ -586,7 +586,7 @@
 3279;Rua da Fábrica;False;
 3281;Praça Dona Filipa de Lencastre;False;50
 3284;;False;
-3292;Rua das Carmelitas;False;sign
+3292;Rua das Carmelitas;False;
 3300;Rua das Carmelitas;False;
 3310;Praça Gomes Teixeira;False;
 3314;;False;
