@@ -13,6 +13,7 @@
 #define MAP_PATH "maps/map.png"
 #define WIDTH 1216
 #define HEIGHT 989
+#define SCALE 3
 
 
 using namespace std;
@@ -46,6 +47,8 @@ void Map::read_mperp(){
 	else{
 		cout << "Error opening the meters per pixel file" << endl;
 	}
+	x_pix = x_pix/SCALE;
+	y_pix = y_pix/SCALE;
 
 }
 
@@ -153,7 +156,7 @@ void Map::read(){
 
 void Map::draw_map(){
 	for(auto it : this->nodes){
-		gv->addNode(it->index, it->x, it->y);
+		gv->addNode(it->index, (it->x*x_pix)-WIDTH, (it->y*y_pix));
 		//gv->setVertexIcon(it->index,"res/icon.gif");
 		gv->setVertexSize(it->index,10);
 
