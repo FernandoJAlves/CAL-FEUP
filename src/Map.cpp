@@ -13,7 +13,9 @@
 #define MAP_PATH "maps/map.png"
 #define WIDTH 1216
 #define HEIGHT 989
-#define SCALE 3
+#define SCALE 2.45f
+#define WIDTHSCREEN 1525
+#define HEIGHTSCREEN 205
 
 double x_pix, y_pix;
 
@@ -158,7 +160,7 @@ void Map::read(){
 
 void Map::draw_map(){
 	for(auto it : this->nodes){
-		gv->addNode(it->index, (it->x*x_pix)-WIDTH, (it->y*y_pix));
+		gv->addNode(it->index, (it->x*x_pix)-WIDTHSCREEN, (it->y*y_pix)-HEIGHTSCREEN);
 		//gv->setVertexIcon(it->index,"res/icon.gif");
 		gv->setVertexSize(it->index,10);
 
@@ -171,6 +173,7 @@ void Map::draw_map(){
 		stringstream temp;
 		temp << i;
 		gv->setEdgeLabel(i, temp.str());
+		gv->setEdgeThickness(i,1);
 	}
 	gv->rearrange();
 }
