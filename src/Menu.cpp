@@ -62,7 +62,7 @@ void Menu::calculatePaths(){
 
 
  //TESTING
-
+/*
 	for(int i = 0; i < 950; i++){
 		cout << i << ": " << m.roads.at(i)->dist_weight << endl;
 	}
@@ -99,14 +99,9 @@ void Menu::calculatePaths(){
 	cin.get();
 	cin.get();
 
-/*
-	for(int i = 6950; i < m.roads.size(); i++){
-		cout << i << ": " << m.roads.at(i)->maxspeed << endl;
-	}
-	cin.get();
-	cin.get();
 */
 
+	//cout << m.roads.size() << endl;
 
 	unsigned int origin, dest;
 

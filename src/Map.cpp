@@ -30,7 +30,7 @@ void Map::createWindow(){
 	gv->createWindow(WIDTH, HEIGHT);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
-	this->draw_map();
+	//TODO this->draw_map();
 }
 
 void Map::closeWindow(){
@@ -117,13 +117,13 @@ void Map::read_roads(){
 			getline(ss,maxspeed,';');
 			ss.clear();
 			i = stoi(index);
-			if(bidirectional == "TRUE"){
+			if(bidirectional == "True"){
 				bd = true;
 			}
 			else{
 				bd = false;
 			}
-			if(maxspeed == "PT:urban\r"){
+			if(maxspeed == "PT:urban\r"  || maxspeed == "PT:urban" ){
 				ms = 50;
 			}
 			else if(maxspeed == "" || maxspeed == "\r"){
