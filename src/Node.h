@@ -7,6 +7,9 @@
 
 class Road;
 
+/**
+ * @brief      Class for node.
+ */
 class Node{
 private:
 	int x,y;

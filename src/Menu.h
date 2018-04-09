@@ -12,6 +12,9 @@
 #define clearScreen() system("cls")
 #endif
 
+/**
+ * @brief      Class for menu.
+ */
 class Menu{
 	private:
 	Map m;

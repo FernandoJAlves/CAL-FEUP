@@ -18,6 +18,9 @@ using namespace std;
  * class T must have: (i) accessible field int queueIndex; (ii) operator< defined.
  */
 
+/**
+ * @brief      List of mutable priorities.
+ */
 class MutablePriorityQueue {
 	vector<Node *> H;
 	void heapifyUp(unsigned i);
@@ -35,16 +38,29 @@ public:
 #define parent(i) ((i) >> 1)  /* i / 2 */
 #define leftChild(i) ((i) << 1)  /* i * 2 */
 
+/**
+ * @brief      Constructs the object.
+ */
 MutablePriorityQueue::MutablePriorityQueue() {
 	H.push_back(NULL);
 	// indices will be used starting in 1
 	// to facilitate parent/child calculations
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 bool MutablePriorityQueue::empty() {
 	return H.size() == 1;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @return     { description_of_the_return_value }
+ */
 Node* MutablePriorityQueue::extractMin() {
 	auto x = H[1];
 	x->queueIndex = 0;
@@ -55,11 +71,21 @@ Node* MutablePriorityQueue::extractMin() {
 	return x;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      x     { parameter_description }
+ */
 void MutablePriorityQueue::insert(Node *x) {
 	H.push_back(x);
 	heapifyUp(H.size()-1);
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  i     { parameter_description }
+ */
 void MutablePriorityQueue::heapifyUp(unsigned i) {
 	auto x = H[i];
 	while (i > 1 && *x < *H[parent(i)]) {
@@ -69,10 +95,20 @@ void MutablePriorityQueue::heapifyUp(unsigned i) {
 	set(i, x);
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      x     { parameter_description }
+ */
 void MutablePriorityQueue::decreaseKey(Node *x) {
 	heapifyUp(x->queueIndex);
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  i     { parameter_description }
+ */
 void MutablePriorityQueue::heapifyDown(unsigned i) {
 	auto x = H[i];
 	while (true) {
@@ -89,6 +125,12 @@ void MutablePriorityQueue::heapifyDown(unsigned i) {
 	set(i, x);
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  i     { parameter_description }
+ * @param      x     { parameter_description }
+ */
 void MutablePriorityQueue::set(unsigned i, Node * x) {
 	H[i] = x;
 	x->queueIndex = i;

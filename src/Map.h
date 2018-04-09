@@ -7,6 +7,9 @@
 
 #define INF std::numeric_limits<double>::max()
 
+/**
+ * @brief      Class for map.
+ */
 class Map{
 private:
 	GraphViewer *gv;

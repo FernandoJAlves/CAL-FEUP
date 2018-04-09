@@ -21,6 +21,9 @@ double x_pix, y_pix;
 
 using namespace std;
 
+/**
+ * @brief      Constructs the object.
+ */
 Map::Map(){
 	gv = new GraphViewer(WIDTH, HEIGHT, false);
 	gv->setBackground(MAP_PATH);
@@ -28,6 +31,9 @@ Map::Map(){
 
 }
 
+/**
+ * @brief      Creates a window.
+ */
 void Map::createWindow(){
 	gv->createWindow(WIDTH, HEIGHT);
 	gv->defineVertexColor("blue");
@@ -35,10 +41,16 @@ void Map::createWindow(){
 	this->draw_map();
 }
 
+/**
+ * @brief      Closes a window.
+ */
 void Map::closeWindow(){
 	gv->closeWindow();
 }
 
+/**
+ * @brief      Reads a mperp.
+ */
 void Map::read_mperp(){
 	ifstream file(MPERP_PATH);
 	if(file.is_open()){
@@ -56,6 +68,9 @@ void Map::read_mperp(){
 
 }
 
+/**
+ * @brief      Reads nodes.
+ */
 void Map::read_nodes(){
 	ifstream file(NODES_PATH);
 	string line;
@@ -77,6 +92,9 @@ void Map::read_nodes(){
 }
 
 
+/**
+ * @brief      Reads subroads.
+ */
 void Map::read_subroads(){
 	ifstream file(SUBROADS_PATH);
 	Road * r;
@@ -102,6 +120,9 @@ void Map::read_subroads(){
 	}
 }
 
+/**
+ * @brief      Reads roads.
+ */
 void Map::read_roads(){
 	ifstream file(ROADS_PATH);
 	stringstream ss;
@@ -150,6 +171,9 @@ void Map::read_roads(){
 	}
 }
 
+/**
+ * @brief      { function_description }
+ */
 void Map::read(){
 	read_mperp();
 	read_nodes();
@@ -158,6 +182,9 @@ void Map::read(){
 }
 
 
+/**
+ * @brief      Draws a map.
+ */
 void Map::draw_map(){
 	for(auto it : this->nodes){
 		gv->addNode(it->index, (it->x*x_pix)-WIDTHSCREEN, (it->y*y_pix)-HEIGHTSCREEN);
@@ -181,6 +208,13 @@ void Map::draw_map(){
 
 //Novos metodos a implementar
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  index  The index
+ *
+ * @return     { description_of_the_return_value }
+ */
 Node* Map::findNode(const unsigned int index) const {
 	if(index >= this->nodes.size()){
 		return NULL;
@@ -188,6 +222,11 @@ Node* Map::findNode(const unsigned int index) const {
 	return this->nodes.at(index);
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  origin  The origin
+ */
 void Map::dijkstraShortestPath_modified(const unsigned int origin){
 	Node * v1 = this->findNode(origin);
 	double oldDist;
@@ -222,6 +261,14 @@ void Map::dijkstraShortestPath_modified(const unsigned int origin){
 }
 
 
+/**
+ * @brief      Gets the path.
+ *
+ * @param[in]  origin  The origin
+ * @param[in]  dest    The destination
+ *
+ * @return     The path.
+ */
 vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int dest) const{
 
 	vector<unsigned int> temp;
@@ -253,6 +300,14 @@ vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int 
 
 }
 
+/**
+ * @brief      Gets the path secure.
+ *
+ * @param[in]  origin  The origin
+ * @param[in]  dest    The destination
+ *
+ * @return     The path secure.
+ */
 vector<unsigned int> Map::getPath_secure(const unsigned int origin, const unsigned int dest) const{
 
 	vector<unsigned int> temp;
@@ -276,17 +331,34 @@ vector<unsigned int> Map::getPath_secure(const unsigned int origin, const unsign
 }
 
 
+/**
+ * @brief      Sets the access road.
+ *
+ * @param[in]  index  The index
+ * @param[in]  value  The value
+ */
 void Map::setAccessRoad(unsigned int index, bool value){
 	this->roads.at(index)->setAccess(value);
 }
 
 
+/**
+ * @brief      { function_description }
+ */
 void Map::printRoads(){
 	for(auto it : this->roads){
 		cout << it->src->index << " " << it->dest->index << endl;
 	}
 }
 
+/**
+ * @brief      Gets the road between nodes.
+ *
+ * @param[in]  origin  The origin
+ * @param[in]  dest    The destination
+ *
+ * @return     The road between nodes.
+ */
 Road * Map::getRoadBetweenNodes(unsigned int origin, unsigned int dest){
 	Node * n = findNode(origin);
 	for(auto it: n->getRoads()){
@@ -297,7 +369,12 @@ Road * Map::getRoadBetweenNodes(unsigned int origin, unsigned int dest){
 	return NULL;
 }
 
-//TODO Corrigir roads para nodes
+// TODO Corrigir roads para nodes
+//
+// @param[in]  v1    The v 1
+//
+// @return     { description_of_the_return_value }
+//
 bool Map::incrementCounter(vector<unsigned int> v1){
 	bool recalculate = false;
 	unsigned int index_ori, index_dest;
@@ -322,6 +399,11 @@ bool Map::incrementCounter(vector<unsigned int> v1){
 	return recalculate;
 }
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  v1    The v 1
+ */
 void Map::listLimitofPath(vector<unsigned int> v1){
 	unsigned int index;
 	cout << endl;
@@ -333,6 +415,11 @@ void Map::listLimitofPath(vector<unsigned int> v1){
 }
 
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  path  The path
+ */
 void Map::paint_path(vector<unsigned int> path) {
 	for(unsigned int i = 0; i < path.size() - 1; i++) {
 		gv->setEdgeThickness(path.at(i), 2);

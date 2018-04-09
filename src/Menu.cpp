@@ -3,8 +3,14 @@
 #include <iostream>
 #include <cmath>
 
+/**
+ * @brief      Constructs the object.
+ */
 Menu::Menu(){}
 
+/**
+ * @brief      { function_description }
+ */
 void Menu::initialOptions(){
 	clearScreen();
 	cout << endl;
@@ -40,6 +46,9 @@ void Menu::initialOptions(){
 }
 
 
+/**
+ * @brief      Calculates the paths.
+ */
 void Menu::calculatePaths(){
 
 //Pseudo Codigo do algoritmo

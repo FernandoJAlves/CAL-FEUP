@@ -6,6 +6,9 @@
 
 class Node;
 
+/**
+ * @brief      Class for road.
+ */
 class Road{
 private:
   std::string name;

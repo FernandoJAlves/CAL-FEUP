@@ -4,6 +4,9 @@
 #include <vector>
 
 
+/**
+ * @brief      Class for car.
+ */
 class Car{
 private:
 	int option = 0;
