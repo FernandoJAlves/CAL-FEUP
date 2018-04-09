@@ -9,23 +9,21 @@
  */
 class Car{
 private:
-	int option = 0;
-	std::vector<unsigned int> path_Index;
+	unsigned int start;
+	unsigned int dest;
+
+	std::vector<unsigned int> index_path;
+	std::vector<unsigned int> old_path;
+	
 public:
+
+
 	Car();
-	Car(std::vector<unsigned int> v, int option){
-		this->path_Index = v;
-		this->option = option;
+	Car(unsigned int index1, unsigned int index2){
+		this->start = index1;
+		this->dest = index2;
 	}
 
-	/*
-	void add_Index(int i){
-		this->path_Index.push_back(i);
-	}
-	void set_Path(std::vector<unsigned int> v){
-		this->path_Index = v;
-	}
-	*/
 
 	friend class Menu;
 };

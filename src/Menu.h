@@ -24,6 +24,7 @@ public:
 	Menu();
 
 	void initialOptions();
+	void calculatePaths_cars();
 	void calculatePaths();
 
 

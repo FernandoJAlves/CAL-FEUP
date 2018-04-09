@@ -405,13 +405,20 @@ bool Map::incrementCounter(vector<unsigned int> v1){
  * @param[in]  v1    The v 1
  */
 void Map::listLimitofPath(vector<unsigned int> v1){
-	unsigned int index;
-	cout << endl;
-	for(unsigned int i = 0; i < v1.size() - 1; i++){
-		index = v1.at(i);
-		cout << index << ": " << this->roads.at(index)->limit << "  ->  ";
+	unsigned int index_ori, index_dest;
+	Road * r = new Road();
+	cout << "\nLimits: \n";
+	for(unsigned int i = 0; i < v1.size() - 2; i++){
+		index_ori = v1.at(i);
+		index_dest = v1.at(i+1);
+		r = this->getRoadBetweenNodes(index_ori, index_dest);
+		cout << index_ori << ": " << r->limit << "  ->  ";
 	}
-	cout << v1.at(v1.size() - 1) << ": " << this->roads.at(v1.at(v1.size() - 1))->limit << endl;
+	index_ori = v1.at(v1.size() - 2);
+	index_dest = v1.at(v1.size() - 1);
+	r = this->getRoadBetweenNodes(index_ori, index_dest);
+
+	cout << v1.at(v1.size() - 1) << ": " << r->limit << endl;
 }
 
 
@@ -421,11 +428,30 @@ void Map::listLimitofPath(vector<unsigned int> v1){
  * @param[in]  path  The path
  */
 void Map::paint_path(vector<unsigned int> path) {
-	for(unsigned int i = 0; i < path.size() - 1; i++) {
-		gv->setEdgeThickness(path.at(i), 2);
-		gv->setEdgeColor(path.at(i), "YELLOW");
+	for(unsigned int i = 0; i < path.size(); i++) {
+		//gv->setEdgeThickness(path.at(i), 2);
+		gv->setVertexColor(path.at(i), "YELLOW");
 	}
 // Se sempre quiserm um icone para diferencer o inicio do fim, fica só a faltar um parametrozito
 //	gv->setVertexIcon(path.at(0),)
 	gv->rearrange();
+}
+
+
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  v1    The v 1
+ */
+double Map::timeOfTravel(vector<unsigned int> v1){
+	unsigned int index_ori, index_dest;
+	double total = 0;
+	Road * r = new Road();
+	for(unsigned int i = 0; i < v1.size() - 1; i++){
+		index_ori = v1.at(i);
+		index_dest = v1.at(i+1);
+		r = this->getRoadBetweenNodes(index_ori, index_dest);
+		total += r->weight;
+	}
+	return total;
 }

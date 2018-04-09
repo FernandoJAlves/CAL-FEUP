@@ -37,6 +37,7 @@ public:
 	bool incrementCounter(vector<unsigned int> v1);
 	void paint_path(vector<unsigned int> path);
 	Road * getRoadBetweenNodes(unsigned int origin, unsigned int dest);
+	double timeOfTravel(vector<unsigned int> v1);
 
 //Metodos para teste
 	void printRoads();
