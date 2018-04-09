@@ -129,6 +129,8 @@ void Menu::calculatePaths(){
 		return;
 	}
 
+	m.listLimitofPath(v1);
+
 	//Já com o re-arrange 
 	m.paint_path(v1);
 
@@ -149,7 +151,7 @@ void Menu::calculatePaths(){
 
 	// Temporary - Shows 1st recalculation only
 
-	cout << "\n\nRecalculating...\n\nNew path: ";
+	cout << "\n\nRecalculating...\n\nNew path: \n";
 
 	m.dijkstraShortestPath_modified(origin);
 	vector<unsigned int> v2 = m.getPath(origin, dest);
@@ -161,6 +163,9 @@ void Menu::calculatePaths(){
 		cout << v2.at(v2.size()-1);
 
 	}
+
+	m.listLimitofPath(v2);
+
 	cout << endl << "Press Enter to return" << endl;
 
 

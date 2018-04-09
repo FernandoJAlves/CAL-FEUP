@@ -33,9 +33,11 @@ public:
 	void setAccessRoad(unsigned int index, bool value);
 	bool incrementCounter(vector<unsigned int> v1);
 	void paint_path(vector<unsigned int> path);
+	Road * getRoadBetweenNodes(unsigned int origin, unsigned int dest);
 
 //Metodos para teste
 	void printRoads();
+	void listLimitofPath(vector<unsigned int> v1);
 
 
 	friend class Menu;

@@ -13,7 +13,8 @@ private:
   bool accessable = true;
   bool bidirectional;
 
-  int dist_weight; // será usado como valor de weight
+  double weight = 0; // será usado como valor de weight
+  int dist;
   int limit;
   int maxspeed;
 
@@ -35,6 +36,7 @@ public:
   bool isAccessable();
   bool isBidirectional();
   int getLimit();
+  double getWeight();
   void setAccess(bool acess);
   int getMaxspeed();
   Node * getSrc();

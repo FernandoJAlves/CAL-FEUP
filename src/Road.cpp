@@ -9,6 +9,7 @@ Road::Road(Node * src, Node * dest):bidirectional(false),maxspeed(20),src(src),d
 {
 	this->defineDist();
 	this->defineLimit();
+	this->weight = ((double)(this->dist))/(this->maxspeed);
 }
 
 void Road::setInfo(std::string name, bool bidirectional, int maxspeed){
@@ -16,10 +17,15 @@ void Road::setInfo(std::string name, bool bidirectional, int maxspeed){
 	this->bidirectional = bidirectional;
 	this->maxspeed = maxspeed;
 	this->defineLimit();
+	this->weight = (this->dist)/(this->maxspeed);
 }
 
 int Road::getDist(){
-  return this->dist_weight;
+  return this->dist;
+}
+
+double Road::getWeight(){
+  return this->weight;
 }
 
 std::string Road::getName(){
@@ -46,11 +52,11 @@ Node * Road::getDest(){
 }
 
 void Road::defineLimit(){
-	this->limit = dist_weight * maxspeed; //TODO maybe this is too much, we need to test
+	this->limit = dist * maxspeed; //TODO maybe this is too much, we need to test
 }
 
 void Road::defineDist(){
-	this->dist_weight = (double)sqrt((double)pow(this->x_meter * (this->src->getX() - this->dest->getX()),2)+(double)pow(this->y_meter * (this->src->getY() - this->dest->getY()),2)) + 1;
+	this->dist = (double)sqrt((double)pow(this->x_meter * (this->src->getX() - this->dest->getX()),2)+(double)pow(this->y_meter * (this->src->getY() - this->dest->getY()),2)) + 1;
 }
 
 void Road::set_XY(double x, double y){

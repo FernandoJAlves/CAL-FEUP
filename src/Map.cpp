@@ -30,7 +30,7 @@ void Map::createWindow(){
 	gv->createWindow(WIDTH, HEIGHT);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
-	//TODO this->draw_map();
+	this->draw_map();
 }
 
 void Map::closeWindow(){
@@ -186,35 +186,26 @@ Node* Map::findNode(const unsigned int index) const {
 }
 
 void Map::dijkstraShortestPath_modified(const unsigned int origin){
-
 	Node * v1 = this->findNode(origin);
 	double oldDist;
-
+	//Initializing
 	for(auto it: this->nodes){
 		it->dist = INF;
 		it->path = NULL;
 		it->queueIndex = 0;
 	}
-
 	v1->dist = 0;
-
 	MutablePriorityQueue q;
-
 	q.insert(v1);
-
+	//Loop until q is empty
 	while(!q.empty()){
 		v1 = q.extractMin();
-
 		for(auto it: v1->roads){
-
-			if(it->accessable){
-
+			if(it->accessable){ //"accessable" determines if a road can be used. Will be false in case of acident or if it's full
 				oldDist = it->dest->dist;
-				if(it->dest->dist > v1->dist + it->dist_weight){
-
-					it->dest->dist = v1->dist + it->dist_weight;
+				if(it->dest->dist > v1->dist + it->weight){
+					it->dest->dist = v1->dist + it->weight;
 					it->dest->path = v1;
-
 					if(oldDist == INF){
 						q.insert(it->dest);
 					}
@@ -222,13 +213,9 @@ void Map::dijkstraShortestPath_modified(const unsigned int origin){
 						q.decreaseKey(it->dest);
 					}
 				}
-
 			}
-
 		}
-
 	}
-
 }
 
 
@@ -297,23 +284,51 @@ void Map::printRoads(){
 	}
 }
 
+Road * Map::getRoadBetweenNodes(unsigned int origin, unsigned int dest){
+	Node * n = findNode(origin);
+	for(auto it: n->getRoads()){
+		if(it->dest->index == dest){
+			return it;
+		}
+	}
+	return NULL;
+}
 
+//TODO Corrigir roads para nodes
 bool Map::incrementCounter(vector<unsigned int> v1){
 	bool recalculate = false;
-	unsigned int index;
-	for(unsigned int i = 0; i < v1.size(); i++){
-		index = v1.at(i);
-		this->roads.at(index)->car_count++;
+	unsigned int index_ori, index_dest;
+	for(unsigned int i = 0; i < v1.size() - 1; i++){
+		index_ori = v1.at(i);
+		index_dest = v1.at(i+1);
+		Road * r = this->getRoadBetweenNodes(index_ori, index_dest);
+		if(r == NULL){
+			cout << "\nError! Road non-existent!\n";
+			return false;
+		}
+		r->car_count++;
 
 		//se +90% de capacidade nesta road
-		if((this->roads.at(index)->car_count) > (this->roads.at(index)->limit) * 0.9){
+		if((r->car_count) > (r->limit) * 0.9){
 			recalculate = true;
-			this->setAccessRoad(index, false);
+			r->accessable = false;
 		}
+
 	}
 
 	return recalculate;
 }
+
+void Map::listLimitofPath(vector<unsigned int> v1){
+	unsigned int index;
+	cout << endl;
+	for(unsigned int i = 0; i < v1.size() - 1; i++){
+		index = v1.at(i);
+		cout << index << ": " << this->roads.at(index)->limit << "  ->  ";
+	}
+	cout << v1.at(v1.size() - 1) << ": " << this->roads.at(v1.at(v1.size() - 1))->limit << endl;
+}
+
 
 void Map::paint_path(vector<unsigned int> path) {
 	for(unsigned int i = 0; i < path.size() - 1; i++) {
