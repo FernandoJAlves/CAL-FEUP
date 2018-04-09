@@ -13,9 +13,9 @@
 #define MAP_PATH "maps/map.png"
 #define WIDTH 1216
 #define HEIGHT 989
-#define SCALE 2.45f
-#define WIDTHSCREEN 1525
-#define HEIGHTSCREEN 205
+#define SCALE 2.4f
+#define WIDTHSCREEN 1560
+#define HEIGHTSCREEN 210
 
 double x_pix, y_pix;
 
