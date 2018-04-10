@@ -15,7 +15,7 @@ Road::Road(Node * src, Node * dest):bidirectional(false),maxspeed(20),src(src),d
 {
 	this->defineDist();
 	this->defineLimit();
-	this->weight = ((double)(this->dist))/(this->maxspeed);
+	this->weight = ((double)(this->dist))/(this->maxspeed) + 0.5;
 }
 
 /**
@@ -30,7 +30,7 @@ void Road::setInfo(std::string name, bool bidirectional, int maxspeed){
 	this->bidirectional = bidirectional;
 	this->maxspeed = maxspeed;
 	this->defineLimit();
-	this->weight = (this->dist)/(this->maxspeed);
+	this->weight = ((double)(this->dist))/(this->maxspeed) + 0.5;
 }
 
 /**

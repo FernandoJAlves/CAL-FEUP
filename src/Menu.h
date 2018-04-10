@@ -4,7 +4,6 @@
 #include "Map.h"
 #include <vector>
 
-#define ARRAY_CAR	5000
 
 #if __linux__
 #define clearScreen() system("clear")

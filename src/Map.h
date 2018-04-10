@@ -35,9 +35,10 @@ public:
 	vector<unsigned int> getPath_secure(const unsigned int origin, const unsigned int dest) const;
 	void setAccessRoad(unsigned int index, bool value);
 	bool incrementCounter(vector<unsigned int> v1);
-	void paint_path(vector<unsigned int> path);
+	void paint_path(vector<unsigned int> path, string color);
 	Road * getRoadBetweenNodes(unsigned int origin, unsigned int dest);
 	double timeOfTravel(vector<unsigned int> v1);
+	void resetMapVars();
 
 //Metodos para teste
 	void printRoads();

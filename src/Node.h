@@ -31,6 +31,7 @@ public:
 	bool operator<(Node & n) const; // // required by MutablePriorityQueue
 
 	friend class Map;
+	friend class Menu;
 	friend class MutablePriorityQueue;
 
 };

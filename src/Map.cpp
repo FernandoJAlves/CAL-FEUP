@@ -427,10 +427,10 @@ void Map::listLimitofPath(vector<unsigned int> v1){
  *
  * @param[in]  path  The path
  */
-void Map::paint_path(vector<unsigned int> path) {
+void Map::paint_path(vector<unsigned int> path, string color) {
 	for(unsigned int i = 0; i < path.size(); i++) {
 		//gv->setEdgeThickness(path.at(i), 2);
-		gv->setVertexColor(path.at(i), "YELLOW");
+		gv->setVertexColor(path.at(i), color);
 	}
 // Se sempre quiserm um icone para diferencer o inicio do fim, fica só a faltar um parametrozito
 //	gv->setVertexIcon(path.at(0),)
@@ -454,4 +454,16 @@ double Map::timeOfTravel(vector<unsigned int> v1){
 		total += r->weight;
 	}
 	return total;
+}
+
+
+void Map::resetMapVars(){
+
+	for(auto it: this->roads){
+		it->accessable = true;
+		it->car_count = 0;
+	}
+
+
+
 }

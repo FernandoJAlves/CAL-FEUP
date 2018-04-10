@@ -93,7 +93,11 @@ void Menu::calculatePaths(){
 		}
 		cout << v1.at(v1.size()-1);
 		
-		m.listLimitofPath(v1);
+		//m.listLimitofPath(v1);
+		
+		//Já com o re-arrange 
+		m.paint_path(v1, "YELLOW");
+
 	}
 	else{
 		cin.get();
@@ -102,8 +106,7 @@ void Menu::calculatePaths(){
 		return;
 	}
 
-	//Já com o re-arrange 
-	m.paint_path(v1);
+
 
 	unsigned int acidente;
 	cout << "\nIndique a aresta onde se localiza o acidente: ";
@@ -133,9 +136,12 @@ void Menu::calculatePaths(){
 		}
 		cout << v2.at(v2.size()-1);
 
+		//Já com o re-arrange 
+		m.paint_path(v2, "RED");
+
 	}
 
-	m.listLimitofPath(v2);
+	//m.listLimitofPath(v2);
 
 	cout << endl << "Press Enter to return" << endl;
 
@@ -220,7 +226,7 @@ void Menu::calculatePaths_cars(){
 		cout << v1.at(v1.size()-1);
 
 		//Já com o re-arrange 
-		m.paint_path(v1);
+		m.paint_path(v1, "YELLOW");
 		
 		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
 		cout << "\nPress Enter to calculate using multiple cars in circulation\n";
@@ -234,11 +240,81 @@ void Menu::calculatePaths_cars(){
 		return;
 	}
 
-	//FALTA O LOOP DE MULTIPLOS CARS
+	
+
+	//Loop com vários carros para testar o redirecionamento
+
+	vector<Car*> cars_vector(car_amount);
+
+	bool recalc = true;
+	vector<unsigned int> path_v;
+
+	for(int i = 0; i < car_amount; i++){
+		Car * c = new Car(start_test, end_test);
+
+		if(recalc){
+			m.dijkstraShortestPath_modified(start_test);
+			path_v = m.getPath_secure(start_test, end_test);
+		}
+
+		c->init_path = path_v;
+		cars_vector[i] = c;
+		recalc = m.incrementCounter(path_v);
+
+	}
 
 
+	//Output
 
+	cout << "\n\nResults testing with " << car_amount << " cars: \n";
 
+	vector<unsigned int> last_path = cars_vector[0]->init_path;
+	int car_int_lower = 0;
+	int option = 1;
+
+	for(int i = 0; i < car_amount; i++){
+
+		if(last_path != cars_vector[i]->init_path){
+			cout << "\n- Option " << option << ": Cars " << car_int_lower << "-" << i-1 << endl;
+			
+			//Show the path
+			if(last_path.size() > 1){
+				for(unsigned int i = 0; i < last_path.size()-1; i++){
+				cout << last_path.at(i) << " -> ";
+				}
+				cout << last_path.at(last_path.size()-1);
+		
+				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
+			}
+			else{
+				cout << "\nNo paths are available right now\n";
+			}
+
+			car_int_lower = i;
+			last_path = cars_vector[i]->init_path;
+			option++;
+		}
+
+		//Final iteration
+		else if(i == car_amount-1){
+			cout << "\n- Option " << option << ": Cars " << car_int_lower << "-" << i << endl;
+
+			//Show the path
+			if(last_path.size() > 1){
+				for(unsigned int i = 0; i < last_path.size()-1; i++){
+				cout << last_path.at(i) << " -> ";
+				}
+				cout << last_path.at(last_path.size()-1);
+		
+				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
+			}
+			else{
+				cout << "\nNo paths are available right now\n";
+			}	
+		}
+	}
+
+	m.resetMapVars();
 
 	unsigned int acidente;
 	cout << "\nIndex of the edge where you want to simulate an accident: ";
@@ -271,44 +347,40 @@ void Menu::calculatePaths_cars(){
 			}
 			cout << v2.at(v2.size()-1);	
 
-			/*
 			//Já com o re-arrange 
-			m.paint_path(v2);
-			*/
-		
+			m.paint_path(v2, "RED");
+			
 			cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
 			cout << "\nPress Enter to calculate using multiple cars in circulation\n";
 			cin.get();
 			cin.get();			
 		}
-
+	}
+	else{
+		cin.get();
+		cin.get();
+		m.closeWindow();
+		return;
 	}
 
 
-	cout << endl << "Press Enter to return" << endl;
 
+	//Loop com vários carros para testar o redirecionamento
 
-/*
+	vector<Car*> cars_vector2(car_amount);
 
-	//Acho que isto está bem, mas tenho de corrigir os inputs para testar
+	recalc = true;
 
-	vector<Car*> cars_vector(ARRAY_CAR); //array de 5000 cars para demostrar o redirecionamento
-
-
-	bool recalc = true;
-	int option = 0;
-
-	vector<unsigned int> path_v;
-
-	for(unsigned int i = 0; i < ARRAY_CAR; i++){
+	for(int i = 0; i < car_amount; i++){
+		Car * c = new Car(start_test, end_test);
 
 		if(recalc){
-			m.dijkstraShortestPath_modified(origin);
-			path_v = m.getPath_secure(origin, dest);
-			option++;
+			m.dijkstraShortestPath_modified(start_test);
+			path_v = m.getPath_secure(start_test, end_test);
 		}
 
-		cars_vector[i] = new Car(path_v,option);
+		c->init_path = path_v;
+		cars_vector2[i] = c;
 		recalc = m.incrementCounter(path_v);
 
 	}
@@ -316,24 +388,76 @@ void Menu::calculatePaths_cars(){
 
 	//Output
 
-	cout << "\n\nResults testing with " << ARRAY_CAR << " cars: \n";
+	cout << "\n\nResults testing with " << car_amount << " cars: \n";
 
-	int lastIndex = cars_vector[0]->option;
-	int car_int_lower = 0;
+	last_path = cars_vector2[0]->init_path;
+	car_int_lower = 0;
+	option = 1;
 
-	for(int i = 0; i < ARRAY_CAR; i++){
+	for(int i = 0; i < car_amount; i++){
 
-		cout << cars_vector[i]->option << endl;
+		if(last_path != cars_vector2[i]->init_path){
+			cout << "\n- Option " << option << ": Cars " << car_int_lower << "-" << i-1 << endl;
+			
+			//Show the path
+			if(last_path.size() > 1){
+				for(unsigned int i = 0; i < last_path.size()-1; i++){
+				cout << last_path.at(i) << " -> ";
+				}
+				cout << last_path.at(last_path.size()-1);
+		
+				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
+			}
+			else{
+				cout << "\nNo paths are available right now\n";
+			}
 
-		///if(lastIndex != cars_vector[i]->option){
-			cout << "\n- Option " << cars_vector[i]->option << ": Cars " << car_int_lower << "-" << i-1 << endl;
 			car_int_lower = i;
-			lastIndex = cars_vector[i]->option;
+			last_path = cars_vector2[i]->init_path;
+			option++;
 		}
 
+		//Final iteration
+		else if(i == car_amount-1){
+			cout << "\n- Option " << option << ": Cars " << car_int_lower << "-" << i << endl;
+
+			//Show the path
+			if(last_path.size() > 1){
+				for(unsigned int i = 0; i < last_path.size()-1; i++){
+				cout << last_path.at(i) << " -> ";
+				}
+				cout << last_path.at(last_path.size()-1);
+		
+				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
+			}
+			else{
+				cout << "\nNo paths are available right now\n";
+			}	
+		}
 	}
 
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	cout << endl << "\nPress Enter to return\n" << endl;
+
 	cin.get();
 	cin.get();
 	m.closeWindow();

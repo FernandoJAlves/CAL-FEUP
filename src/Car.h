@@ -12,8 +12,8 @@ private:
 	unsigned int start;
 	unsigned int dest;
 
-	std::vector<unsigned int> index_path;
-	std::vector<unsigned int> old_path;
+	std::vector<unsigned int> init_path;
+	std::vector<unsigned int> new_path;
 	
 public:
 
