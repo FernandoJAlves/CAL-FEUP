@@ -19,145 +19,145 @@ private:
 public:
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Map Constructor.
 	 */
 	Map();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Calls all the read functions for files.
 	 */
 	void read();
 
 	/**
-	 * @brief      Reads a mperp.
+	 * @brief      Reads the mperp values from a file.
 	 */
 	void read_mperp();
 
 	/**
-	 * @brief      Reads nodes.
+	 * @brief      Reads the nodes from a file.
 	 */
 	void read_nodes();
-	
+
 	/**
-	 * @brief      Reads subroads.
+	 * @brief      Reads the subroads from a file.
 	 */
 	void read_subroads();
-	
+
 	/**
-	 * @brief      Reads roads.
+	 * @brief      Reads the roads' info from a file.
 	 */
 	void read_roads();
-	
+
 	/**
-	 * @brief      Draws a map.
+	 * @brief      Draws the map using the nodes and roads stored in vectors.
 	 */
 	void draw_map();
-	
+
 	/**
-	 * @brief      Creates a window.
+	 * @brief      Creates a graphical window and calls the read() function
 	 */
 	void createWindow();
-	
+
 	/**
-	 * @brief      Closes a window.
+	 * @brief      Closes the graphical window, and removes all nodes and roads.
 	 */
 	void closeWindow();
 
 
-// Novos metodos a implementar
+// Novos metodos
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Find a node with the given index.
 	 *
-	 * @param[in]  index  The index
+	 * @param[in]  index  The node index
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     A node*, or NULL if non-existent.
 	 */
 	Node* findNode(const unsigned int index) const;
-	
+
 	/**
-	 * @brief      { function_description }
+	 * @brief      Shortest Path Algorithm, modified for our needs.
 	 *
-	 * @param[in]  origin  The origin
+	 * @param[in]  origin  The origin node index
 	 */
 	void dijkstraShortestPath_modified(const unsigned int origin);
-	
+
 	/**
-	 * @brief      Gets the path.
+	 * @brief      Gets the path between the nodes origin and dest.
 	 *
-	 * @param[in]  origin  The origin
-	 * @param[in]  dest    The destination
+	 * @param[in]  origin  The origin index
+	 * @param[in]  dest    The destination index
 	 *
-	 * @return     The path.
+	 * @return     The path of indexes in a vector.
 	 */
 	vector<unsigned int> getPath(const unsigned int origin, const unsigned int dest) const;
-	
+
 	/**
-	 * @brief      Gets the path secure.
+	 * @brief      Gets the path between the nodes origin and dest, but assumes the origin and dest exist
 	 *
-	 * @param[in]  origin  The origin
-	 * @param[in]  dest    The destination
+	 * @param[in]  origin  The origin index
+	 * @param[in]  dest    The destination index
 	 *
-	 * @return     The path secure.
+	 * @return     The path of indexes in a vector.
 	 */
 	vector<unsigned int> getPath_secure(const unsigned int origin, const unsigned int dest) const;
-	
+
 	/**
-	 * @brief      Sets the access road.
+	 * @brief      Sets the access road accessable to given value.
 	 *
-	 * @param[in]  index  The index
-	 * @param[in]  value  The value
+	 * @param[in]  index  The road index
+	 * @param[in]  value  The bool value intended
 	 */
 	void setAccessRoad(unsigned int index, bool value);
-	
+
 	/**
-	 * @brief      { function_description }
+	 * @brief      Increments the car_count of all the roads in a path
 	 *
-	 * @param[in]  v1    The v 1
+	 * @param[in]  v1    The vector of node indexes
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     The value of recalc, that determines if a path recalculation is needed
 	 */
 	bool incrementCounter(vector<unsigned int> v1);
-	
+
 	/**
-	 * @brief      { function_description }
+	 * @brief      Paints the nodes in a path with the given color
 	 *
-	 * @param[in]  path   The path
+	 * @param[in]  path   The path of nodes
 	 * @param[in]  color  The color
 	 */
 	void paint_path(vector<unsigned int> path, string color);
-	
+
 	/**
-	 * @brief      Gets the road between nodes.
+	 * @brief      Gets the road between 2 given nodes.
 	 *
-	 * @param[in]  origin  The origin
-	 * @param[in]  dest    The destination
+	 * @param[in]  origin  The origin index
+	 * @param[in]  dest    The destination index
 	 *
-	 * @return     The road between nodes.
+	 * @return     A Road* to the road between 2 given nodes.
 	 */
 	Road * getRoadBetweenNodes(unsigned int origin, unsigned int dest);
-	
+
 	/**
-	 * @brief      { function_description }
+	 * @brief      Calculates the time a path takes to be travelled.
 	 *
-	 * @param[in]  v1    The v 1
+	 * @param[in]  v1    The path of nodes
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     The time of travel.
 	 */
 	double timeOfTravel(vector<unsigned int> v1);
-	
+
 	/**
-	 * @brief      { function_description }
+	 * @brief      Resets the vars used for calculating the shortest path
 	 */
 	void resetMapVars();
 
 //Metodos para teste
-	
+
 	/**
 	 * @brief      { function_description }
 	 */
 	void printRoads();
-	
+
 	/**
 	 * @brief      { function_description }
 	 *
