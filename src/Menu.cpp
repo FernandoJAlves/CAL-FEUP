@@ -97,6 +97,7 @@ void Menu::calculatePaths(){
 		
 		//Já com o re-arrange 
 		m.paint_path(v1, "YELLOW");
+		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
 
 	}
 	else{
@@ -138,8 +139,16 @@ void Menu::calculatePaths(){
 
 		//Já com o re-arrange 
 		m.paint_path(v2, "RED");
+		cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
 
 	}
+	else{
+		cin.get();
+		cin.get();
+		m.closeWindow();
+		return;
+	}
+
 
 	//m.listLimitofPath(v2);
 
