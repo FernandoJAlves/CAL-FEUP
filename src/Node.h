@@ -24,43 +24,48 @@ private:
 public:
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Node Constructor.
 	 *
-	 * @param[in]  x      { parameter_description }
-	 * @param[in]  y      { parameter_description }
-	 * @param[in]  index  The index
+	 * @param[in]  x      x coordinate
+	 * @param[in]  y      y coordinate
+	 * @param[in]  index  The node index
 	 */
 	Node(int x, int y, int index);
 
 	/**
-	 * @brief      Gets the x.
+	 * @brief      Gets the x coordinate.
 	 *
 	 * @return     The x.
 	 */
 	int getX();
 
 	/**
-	 * @brief      Gets the y.
+	 * @brief      Gets the y coordinate.
 	 *
 	 * @return     The y.
 	 */
 	int getY();
 
 	/**
-	 * @brief      Gets the roads.
+	 * @brief      Gets the vector of adjacent roads.
 	 *
-	 * @return     The roads.
+	 * @return     The vector of roads.
 	 */
-	std::vector<Road*>  & getRoads();
+	std::vector<Road*> & getRoads();
 	
 	/**
-	 * @brief      Adds a road.
+	 * @brief      Adds a road do the roads vector.
 	 *
-	 * @param      r     { parameter_description }
+	 * @param      r     The road being added
 	 */
 	void addRoad(Road *r);
 
-	bool operator<(Node & n) const; // // required by MutablePriorityQueue
+	/**
+	 * @brief      Overload of the < operator.
+	 *
+	 * @param      n     The node being compared
+	 */
+	bool operator<(Node & n) const;      // required by MutablePriorityQueue
 
 	friend class Map;
 	friend class Menu;

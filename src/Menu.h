@@ -22,22 +22,22 @@ public:
 	bool terminate = false;
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Menu Constructor.
 	 */
 	Menu();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Initial Options Menu
 	 */
 	void initialOptions();
 	
 	/**
-	 * @brief      Calculates the paths cars.
+	 * @brief      Calculates the paths with multiple cars.
 	 */
 	void calculatePaths_cars();
 
 	/**
-	 * @brief      Calculates the paths.
+	 * @brief      Calculates the paths for a single car.
 	 */
 	void calculatePaths();
 

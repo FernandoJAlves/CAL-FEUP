@@ -5,9 +5,9 @@
 using namespace std;
 
 /**
- * @brief      { function_description }
+ * @brief      The main function
  *
- * @return     { description_of_the_return_value }
+ * @return     0
  */
 int main(){
 	//Map map;

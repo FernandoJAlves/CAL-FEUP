@@ -300,7 +300,6 @@ Road * Map::getRoadBetweenNodes(unsigned int origin, unsigned int dest){
 	return NULL;
 }
 
-// TODO Corrigir roads para nodes
 bool Map::incrementCounter(vector<unsigned int> v1){
 	bool recalculate = false;
 	unsigned int index_ori, index_dest;

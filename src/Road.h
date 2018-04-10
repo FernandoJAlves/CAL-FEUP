@@ -28,15 +28,15 @@ private:
 public:
 
   /**
-   * @brief      { function_description }
+   * @brief      Road Constructor.
    */
   Road(){};
 
   /**
-   * @brief      { function_description }
+   * @brief      Road Constructor.
    *
-   * @param      src   The source
-   * @param      dest  The destination
+   * @param      src   The source node
+   * @param      dest  The destination node
    */
   Road(Node * src, Node * dest);
 
@@ -44,23 +44,23 @@ public:
   static double y_meter;
 
   /**
-   * @brief      Sets the information.
+   * @brief      Sets aditional information.
    *
-   * @param[in]  name           The name
-   * @param[in]  bidirectional  The bidirectional
-   * @param[in]  maxspeed       The maxspeed
+   * @param[in]  name           The name of the road
+   * @param[in]  bidirectional  If the road is bidirectional
+   * @param[in]  maxspeed       The maxspeed of the road
    */
   void setInfo(std::string name, bool bidirectional, int maxspeed);
   
   /**
-   * @brief      Gets the distance.
+   * @brief      Gets the distance of a road.
    *
    * @return     The distance.
    */
   int getDist();
   
   /**
-   * @brief      Gets the name.
+   * @brief      Gets the name of a road.
    *
    * @return     The name.
    */
@@ -95,11 +95,11 @@ public:
   double getWeight();
   
   /**
-   * @brief      Sets the access.
+   * @brief      Sets the accessable value.
    *
-   * @param[in]  acess  The acess
+   * @param[in]  access  The access
    */
-  void setAccess(bool acess);
+  void setAccess(bool access);
   
   /**
    * @brief      Gets the maxspeed.
@@ -109,39 +109,36 @@ public:
   int getMaxspeed();
   
   /**
-   * @brief      Gets the source.
+   * @brief      Gets the source node.
    *
-   * @return     The source.
+   * @return     The source node.
    */
   Node * getSrc();
   
   /**
-   * @brief      Gets the destination.
+   * @brief      Gets the destination node.
    *
-   * @return     The destination.
+   * @return     The destination node.
    */
   Node * getDest();
   
   /**
-   * @brief      { function_description }
+   * @brief      Defines the limit of a road.
    */
   void defineLimit();
   
   /**
-   * @brief      { function_description }
+   * @brief      Defines the dist of a road.
    */
   void defineDist();
   
   /**
-   * @brief      Sets the xy.
+   * @brief      Sets the xy values for map scaling.
    *
-   * @param[in]  x     { parameter_description }
-   * @param[in]  y     { parameter_description }
+   * @param[in]  x     x ratio
+   * @param[in]  y     y ratio
    */
   static void set_XY(double x, double y);
-
-
-
 
   friend class Map;
   friend class Menu;

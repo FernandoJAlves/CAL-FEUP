@@ -17,7 +17,14 @@ private:
 
 public:
 
+	/**
+	 * @brief      Car Constructor.
+	 */
 	Car();
+
+	/**
+	 * @brief      Car Constructor with parameters.
+	 */
 	Car(unsigned int index1, unsigned int index2){
 		this->start = index1;
 		this->dest = index2;

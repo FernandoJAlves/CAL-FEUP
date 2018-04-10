@@ -154,14 +154,14 @@ public:
 //Metodos para teste
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Prints the roads in the roads' vector
 	 */
 	void printRoads();
 
 	/**
-	 * @brief      { function_description }
+	 * @brief      Lists the limits of the roads in a given path
 	 *
-	 * @param[in]  v1    The v 1
+	 * @param[in]  v1    The path of indexes
 	 */
 	void listLimitofPath(vector<unsigned int> v1);
 
