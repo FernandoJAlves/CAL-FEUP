@@ -30,12 +30,20 @@ Map::Map(){
 
 void Map::createWindow(){
 	gv->createWindow(WIDTH, HEIGHT);
+	gv->defineEdgeCurved(false);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	this->draw_map();
 }
 
 void Map::closeWindow(){
+	this->resetMapVars();
+	for(unsigned int i = 0; i < this->roads.size();i++){
+		gv->removeEdge(i);
+	}
+	for(unsigned int i = 0; i < this->nodes.size();i++){
+		gv->removeNode(i);
+	}
 	gv->closeWindow();
 }
 

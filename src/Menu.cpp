@@ -34,7 +34,7 @@ void Menu::initialOptions(){
 			this->terminate = true;
 			cout << "The program will terminate. Thank you for choosing our service" << endl;
 			cin.get();
-			break;	
+			break;
 		default:
 			cout << "Invalid input!\n";
 			cin.get();
@@ -83,10 +83,10 @@ void Menu::calculatePaths(){
 			cout << v1.at(i) << " -> ";
 		}
 		cout << v1.at(v1.size()-1);
-		
+
 		//m.listLimitofPath(v1);
-		
-		//Já com o re-arrange 
+
+		//Já com o re-arrange
 		m.paint_path(v1, "YELLOW");
 		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
 
@@ -128,7 +128,7 @@ void Menu::calculatePaths(){
 		}
 		cout << v2.at(v2.size()-1);
 
-		//Já com o re-arrange 
+		//Já com o re-arrange
 		m.paint_path(v2, "RED");
 		cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
 
@@ -139,9 +139,6 @@ void Menu::calculatePaths(){
 		m.closeWindow();
 		return;
 	}
-
-
-	//m.listLimitofPath(v2);
 
 	cout << endl << "Press Enter to return" << endl;
 
@@ -200,11 +197,14 @@ void Menu::calculatePaths_cars(){
 			start_test = 0;
 			end_test = 0;
 			car_amount = 1;
+			m.closeWindow();
 			return; //temporary
 			break;
 		default:
 			cout << "Invalid input!\nReturning to the main menu\n";
 			cin.get();
+			cin.get();
+			m.closeWindow();
 			return;
 	}
 
@@ -219,9 +219,9 @@ void Menu::calculatePaths_cars(){
 		}
 		cout << v1.at(v1.size()-1);
 
-		//Já com o re-arrange 
+		//Já com o re-arrange
 		m.paint_path(v1, "YELLOW");
-		
+
 		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
 		cout << "\nPress Enter to calculate using multiple cars in circulation\n";
 		cin.get();
@@ -234,7 +234,7 @@ void Menu::calculatePaths_cars(){
 		return;
 	}
 
-	
+
 
 	//Loop com vários carros para testar o redirecionamento
 
@@ -270,14 +270,14 @@ void Menu::calculatePaths_cars(){
 
 		if(last_path != cars_vector[i]->init_path){
 			cout << "\n- Option " << option << ": Cars " << car_int_lower << "-" << i-1 << endl;
-			
+
 			//Show the path
 			if(last_path.size() > 1){
 				for(unsigned int i = 0; i < last_path.size()-1; i++){
 				cout << last_path.at(i) << " -> ";
 				}
 				cout << last_path.at(last_path.size()-1);
-		
+
 				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
 			}
 			else{
@@ -299,12 +299,12 @@ void Menu::calculatePaths_cars(){
 				cout << last_path.at(i) << " -> ";
 				}
 				cout << last_path.at(last_path.size()-1);
-		
+
 				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
 			}
 			else{
 				cout << "\nNo paths are available right now\n";
-			}	
+			}
 		}
 	}
 
@@ -325,7 +325,7 @@ void Menu::calculatePaths_cars(){
 		return;
 	}
 
-	cout << "\n\nRecalculating...\n";
+	cout << "\n\nRecalculating...\n\n";
 
 	m.dijkstraShortestPath_modified(start_test);
 	vector<unsigned int> v2 = m.getPath(start_test, end_test);
@@ -333,21 +333,23 @@ void Menu::calculatePaths_cars(){
 	if(v2.size() > 1){
 		if(v1 == v2){
 			cout << "\nThe ideal path stayed the same\n";
+			cin.get();
+			cin.get();
 		}
 		else{
 			cout << "\nNew path: \n";
 			for(unsigned int i = 0; i < v2.size()-1; i++){
 				cout << v2.at(i) << " -> ";
 			}
-			cout << v2.at(v2.size()-1);	
+			cout << v2.at(v2.size()-1);
 
-			//Já com o re-arrange 
+			//Já com o re-arrange
 			m.paint_path(v2, "RED");
-			
+
 			cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
 			cout << "\nPress Enter to calculate using multiple cars in circulation\n";
 			cin.get();
-			cin.get();			
+			cin.get();
 		}
 	}
 	else{
@@ -356,8 +358,6 @@ void Menu::calculatePaths_cars(){
 		m.closeWindow();
 		return;
 	}
-
-
 
 	//Loop com vários carros para testar o redirecionamento
 
@@ -392,14 +392,14 @@ void Menu::calculatePaths_cars(){
 
 		if(last_path != cars_vector2[i]->init_path){
 			cout << "\n- Option " << option << ": Cars " << car_int_lower << "-" << i-1 << endl;
-			
+
 			//Show the path
 			if(last_path.size() > 1){
 				for(unsigned int i = 0; i < last_path.size()-1; i++){
 				cout << last_path.at(i) << " -> ";
 				}
 				cout << last_path.at(last_path.size()-1);
-		
+
 				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
 			}
 			else{
@@ -421,42 +421,20 @@ void Menu::calculatePaths_cars(){
 				cout << last_path.at(i) << " -> ";
 				}
 				cout << last_path.at(last_path.size()-1);
-		
+
 				cout << "\nTime of travel: " << m.timeOfTravel(last_path) << endl;
 			}
 			else{
 				cout << "\nNo paths are available right now\n";
-			}	
+			}
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	m.resetMapVars();
 
 	cout << endl << "\nPress Enter to return\n" << endl;
 
 	cin.get();
-	cin.get();
 	m.closeWindow();
 
 }
-
-
-

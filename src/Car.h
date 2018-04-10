@@ -14,17 +14,15 @@ private:
 
 	std::vector<unsigned int> init_path;
 	std::vector<unsigned int> new_path;
-	
-public:
 
+public:
 
 	Car();
 	Car(unsigned int index1, unsigned int index2){
 		this->start = index1;
 		this->dest = index2;
 	}
-
-
+	
 	friend class Menu;
 };
 
