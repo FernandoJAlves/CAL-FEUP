@@ -20,9 +20,9 @@
 #define END_TEST2      3159
 #define CARS_TEST2     50
 
-#define START_TEST3    24
-#define END_TEST3      3159
-#define CARS_TEST3     500
+#define START_TEST3    18
+#define END_TEST3      156
+#define CARS_TEST3     1000
 
 
 /**

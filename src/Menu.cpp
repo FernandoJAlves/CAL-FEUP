@@ -155,10 +155,10 @@ void Menu::calculatePaths_cars(){
 	cout << endl;
 	cout << "+--------------------------------------------------------+" << endl;
 	cout << "|                  Select an Example:                    |" << endl;
-	cout << "|                                                  |" << endl;
-	cout << "|   1 - Example 1 (Palacio Cristal -> Cedofeita)   |" << endl;
+	cout << "|                                                        |" << endl;
+	cout << "|   1 - Example 1 (Palacio Cristal -> Cedofeita)         |" << endl;
 	cout << "|   2 - Example 2 (Praca da Rep. -> Rot. da Boavista)    |" << endl;
-	cout << "|   3 - Example 3 (                   )            |" << endl;
+	cout << "|   3 - Example 3 (Cedofeita -> Doze Casas)              |" << endl;
 	cout << "|   0 - Exit                                             |" << endl;
 	cout << "|                                                        |" << endl;
 	cout << "+--------------------------------------------------------+" << endl;
@@ -175,11 +175,18 @@ void Menu::calculatePaths_cars(){
 			car_amount = CARS_TEST1;
 			break;
 		case 2:
-			//TODO ---------------------------------/////////////////////--------------------------------
 			start_test = START_TEST2;
 			end_test = END_TEST2;
 			car_amount = CARS_TEST2;
 			break;
+		case 3:
+			start_test = START_TEST3;
+			end_test = END_TEST3;
+			car_amount = CARS_TEST3;
+			break;
+		case 0:
+			m.closeWindow();
+			return;
 		default:
 			cout << "Invalid input!\nReturning to the main menu\n";
 			cin.get();
