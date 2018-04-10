@@ -22,10 +22,42 @@ private:
 	int queueIndex = 0; 		// required by MutablePriorityQueue
 
 public:
+
+	/**
+	 * @brief      { function_description }
+	 *
+	 * @param[in]  x      { parameter_description }
+	 * @param[in]  y      { parameter_description }
+	 * @param[in]  index  The index
+	 */
 	Node(int x, int y, int index);
+
+	/**
+	 * @brief      Gets the x.
+	 *
+	 * @return     The x.
+	 */
 	int getX();
+
+	/**
+	 * @brief      Gets the y.
+	 *
+	 * @return     The y.
+	 */
 	int getY();
+
+	/**
+	 * @brief      Gets the roads.
+	 *
+	 * @return     The roads.
+	 */
 	std::vector<Road*>  & getRoads();
+	
+	/**
+	 * @brief      Adds a road.
+	 *
+	 * @param      r     { parameter_description }
+	 */
 	void addRoad(Road *r);
 
 	bool operator<(Node & n) const; // // required by MutablePriorityQueue

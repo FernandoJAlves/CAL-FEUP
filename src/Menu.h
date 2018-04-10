@@ -20,10 +20,25 @@ class Menu{
 
 public:
 	bool terminate = false;
+
+	/**
+	 * @brief      { function_description }
+	 */
 	Menu();
 
+	/**
+	 * @brief      { function_description }
+	 */
 	void initialOptions();
+	
+	/**
+	 * @brief      Calculates the paths cars.
+	 */
 	void calculatePaths_cars();
+
+	/**
+	 * @brief      Calculates the paths.
+	 */
 	void calculatePaths();
 
 
