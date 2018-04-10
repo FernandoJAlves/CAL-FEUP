@@ -13,7 +13,7 @@ private:
 	unsigned int dest;
 
 	std::vector<unsigned int> init_path;
-	std::vector<unsigned int> new_path;
+	//std::vector<unsigned int> new_path;
 
 public:
 

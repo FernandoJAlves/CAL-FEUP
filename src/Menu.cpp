@@ -46,50 +46,31 @@ void Menu::initialOptions(){
 
 void Menu::calculatePaths(){
 
+//Single car, single accident
 //Pseudo Codigo do algoritmo
 
-	//Pedir ao user o node atual e o node de destino
-
-	//Calcular o melhor trajeto para lá chegar
-
-	//Modificar o graphViewer para mostrar esse path
-
-	//Pedir ao user uma edge nesse path para "simular" um acidente que impede a passagem nessa edge
-
-	//Gerar um vetor/array de Cars, e percorre-lo, e definir o path de cada carro como o path percorrido
-		//No final de cada iteração, testar os edges do path, se algum deles estiver a 90% de capacidade, por o seu valor de acessable a false e recalcular um path
-
-	//Quando terminarem os Cars, mostrar o output de alguma forma
-
+	//(Explicado na função seguinte)
 
 	m.createWindow();
 
-	unsigned int origin, dest;
 
+	unsigned int origin, dest;
 	cout << "Index of the current node: ";
 	cin >> origin;
-
-
 	cout << "Index of the destination node: ";
 	cin >> dest;
-
 
 	m.dijkstraShortestPath_modified(origin);
 	vector<unsigned int> v1 = m.getPath(origin, dest);
 
-	cout << "\nPath: \n";
+	cout << "\n\nPath: \n";
 	if(v1.size() > 1){
 		for(unsigned int i = 0; i < v1.size()-1; i++){
 			cout << v1.at(i) << " -> ";
 		}
 		cout << v1.at(v1.size()-1);
-
-		//m.listLimitofPath(v1);
-
-		//Já com o re-arrange
 		m.paint_path(v1, "YELLOW");
 		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
-
 	}
 	else{
 		cin.get();
@@ -97,7 +78,6 @@ void Menu::calculatePaths(){
 		m.closeWindow();
 		return;
 	}
-
 
 
 	unsigned int acidente;
@@ -115,8 +95,6 @@ void Menu::calculatePaths(){
 		return;
 	}
 
-	// Shows 1st recalculation only
-
 	cout << "\n\nRecalculating...\n\nNew path: \n";
 
 	m.dijkstraShortestPath_modified(origin);
@@ -127,11 +105,8 @@ void Menu::calculatePaths(){
 			cout << v2.at(i) << " -> ";
 		}
 		cout << v2.at(v2.size()-1);
-
-		//Já com o re-arrange
 		m.paint_path(v2, "RED");
 		cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
-
 	}
 	else{
 		cin.get();
@@ -141,45 +116,52 @@ void Menu::calculatePaths(){
 	}
 
 	cout << endl << "Press Enter to return" << endl;
-
 	cin.get();
 	cin.get();
 	m.closeWindow();
-
 }
 
 void Menu::calculatePaths_cars(){
 
+//Multiple cars, single accident
+
 //Pseudo Codigo do algoritmo
 
-	//Pedir ao user o node atual e o node de destino
+	//Pedir ao user um trajeto (origem e destino) 
 
 	//Calcular o melhor trajeto para lá chegar
 
 	//Modificar o graphViewer para mostrar esse path
 
+	//Mostrar recalculamento com vários cars + redirecionamento
+
 	//Pedir ao user uma edge nesse path para "simular" um acidente que impede a passagem nessa edge
 
-	//Gerar um vetor/array de Cars, e percorre-lo, e definir o path de cada carro como o path percorrido
-		//No final de cada iteração, testar os edges do path, se algum deles estiver a 90% de capacidade, por o seu valor de acessable a false e recalcular um path
+	//Calcular o "novo" melhor trajeto para chegar ao destino
 
-	//Quando terminarem os Cars, mostrar o output de alguma forma
+	//Modificar o graphViewer para mostrar também esse novo path
+
+	//Gerar um vetor/array de Cars, e percorre-lo, e definir o path de cada carro como o path percorrido
+		//No final de cada iteração, testar os edges do path, se algum deles estiver a 90% de capacidade, por o seu valor de acessable a false e recalcular os paths
+
+	//Quando terminarem os Cars, mostrar o output
 
 
 	m.createWindow();
 
-	unsigned int start_test = 1537; //default is example 1
-	unsigned int end_test = 225;
-	int car_amount = 50;
+	unsigned int start_test, end_test;
+	int car_amount;
 
 	cout << endl;
-	cout << "+--------------------------------------------------+" << endl;
-	cout << "|               Select an Example:                 |" << endl;
+	cout << "+--------------------------------------------------------+" << endl;
+	cout << "|                  Select an Example:                    |" << endl;
 	cout << "|                                                  |" << endl;
 	cout << "|   1 - Example 1 (Palacio Cristal -> Cedofeita)   |" << endl;
-	cout << "|   2 - Example 2 (                   )            |" << endl;
-	cout << "|                                                  |" << endl;
-	cout << "+--------------------------------------------------+" << endl;
+	cout << "|   2 - Example 2 (Praca da Rep. -> Rot. da Boavista)    |" << endl;
+	cout << "|   3 - Example 3 (                   )            |" << endl;
+	cout << "|   0 - Exit                                             |" << endl;
+	cout << "|                                                        |" << endl;
+	cout << "+--------------------------------------------------------+" << endl;
 
 	int opcao;
 
@@ -188,17 +170,15 @@ void Menu::calculatePaths_cars(){
 
 	switch(opcao){
 		case 1:
-			start_test = 1537;
-			end_test = 225;
-			car_amount = 50;
+			start_test = START_TEST1;
+			end_test = END_TEST1;
+			car_amount = CARS_TEST1;
 			break;
 		case 2:
 			//TODO ---------------------------------/////////////////////--------------------------------
-			start_test = 0;
-			end_test = 0;
-			car_amount = 1;
-			m.closeWindow();
-			return; //temporary
+			start_test = START_TEST2;
+			end_test = END_TEST2;
+			car_amount = CARS_TEST2;
 			break;
 		default:
 			cout << "Invalid input!\nReturning to the main menu\n";
@@ -433,8 +413,6 @@ void Menu::calculatePaths_cars(){
 	m.resetMapVars();
 
 	cout << endl << "\nPress Enter to return\n" << endl;
-
 	cin.get();
 	m.closeWindow();
-
 }
