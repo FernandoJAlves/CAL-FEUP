@@ -37,6 +37,7 @@ void Map::createWindow(){
 }
 
 void Map::closeWindow(){
+
 	this->resetMapVars();
 	for(unsigned int i = 0; i < this->roads.size();i++){
 		gv->removeEdge(i);
@@ -187,15 +188,17 @@ void Map::draw_map(){
 
 //Novos metodos a implementar
 
-Node* Map::findNode(const unsigned int index) const {
+Node* Map::findNode(unsigned int index) const {
 	if(index >= this->nodes.size()){
 		return NULL;
 	}
 	return this->nodes.at(index);
 }
 
-void Map::dijkstraShortestPath_modified(const unsigned int origin){
+void Map::dijkstraShortestPath_modified(unsigned int origin, unsigned int dest){
 	Node * v1 = this->findNode(origin);
+	Node * dest_node = this->findNode(dest);
+
 	double oldDist;
 	//Initializing
 	for(auto it: this->nodes){
@@ -209,6 +212,10 @@ void Map::dijkstraShortestPath_modified(const unsigned int origin){
 	//Loop until q is empty
 	while(!q.empty()){
 		v1 = q.extractMin();
+		//If the node being processed is the destination, the algorithm can stop
+		if(v1 == dest_node){
+			break;
+		}
 		for(auto it: v1->roads){
 			if(it->accessable){ //"accessable" determines if a road can be used. Will be false in case of acident or if it's full
 				oldDist = it->dest->dist;
@@ -227,7 +234,7 @@ void Map::dijkstraShortestPath_modified(const unsigned int origin){
 	}
 }
 
-vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int dest) const{
+vector<unsigned int> Map::getPath(unsigned int origin, unsigned int dest) const{
 
 	vector<unsigned int> temp;
 	Node * v1 = this->findNode(dest);
@@ -258,7 +265,7 @@ vector<unsigned int> Map::getPath(const unsigned int origin, const unsigned int 
 
 }
 
-vector<unsigned int> Map::getPath_secure(const unsigned int origin, const unsigned int dest) const{
+vector<unsigned int> Map::getPath_secure(unsigned int origin, unsigned int dest) const{
 
 	vector<unsigned int> temp;
 	Node * v1 = this->findNode(dest);

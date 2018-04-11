@@ -73,14 +73,15 @@ public:
 	 *
 	 * @return     A node*, or NULL if non-existent.
 	 */
-	Node* findNode(const unsigned int index) const;
+	Node* findNode(unsigned int index) const;
 
 	/**
 	 * @brief      Shortest Path Algorithm, modified for our needs.
 	 *
 	 * @param[in]  origin  The origin node index
+	 * @param[in]  dest    The destination index
 	 */
-	void dijkstraShortestPath_modified(const unsigned int origin);
+	void dijkstraShortestPath_modified(unsigned int origin, unsigned int dest);
 
 	/**
 	 * @brief      Gets the path between the nodes origin and dest.
@@ -90,7 +91,7 @@ public:
 	 *
 	 * @return     The path of indexes in a vector.
 	 */
-	vector<unsigned int> getPath(const unsigned int origin, const unsigned int dest) const;
+	vector<unsigned int> getPath(unsigned int origin, unsigned int dest) const;
 
 	/**
 	 * @brief      Gets the path between the nodes origin and dest, but assumes the origin and dest exist
@@ -100,7 +101,7 @@ public:
 	 *
 	 * @return     The path of indexes in a vector.
 	 */
-	vector<unsigned int> getPath_secure(const unsigned int origin, const unsigned int dest) const;
+	vector<unsigned int> getPath_secure(unsigned int origin, unsigned int dest) const;
 
 	/**
 	 * @brief      Sets the access road accessable to given value.

@@ -60,7 +60,7 @@ void Menu::calculatePaths(){
 	cout << "Index of the destination node: ";
 	cin >> dest;
 
-	m.dijkstraShortestPath_modified(origin);
+	m.dijkstraShortestPath_modified(origin, dest);
 	vector<unsigned int> v1 = m.getPath(origin, dest);
 
 	cout << "\n\nPath: \n";
@@ -97,7 +97,7 @@ void Menu::calculatePaths(){
 
 	cout << "\n\nRecalculating...\n\nNew path: \n";
 
-	m.dijkstraShortestPath_modified(origin);
+	m.dijkstraShortestPath_modified(origin, dest);
 	vector<unsigned int> v2 = m.getPath(origin, dest);
 
 	if(v2.size() > 1){
@@ -127,7 +127,7 @@ void Menu::calculatePaths_cars(){
 
 //Pseudo Codigo do algoritmo
 
-	//Pedir ao user um trajeto (origem e destino) 
+	//Pedir ao user um trajeto (origem e destino)
 
 	//Calcular o melhor trajeto para lá chegar
 
@@ -196,7 +196,7 @@ void Menu::calculatePaths_cars(){
 	}
 
 
-	m.dijkstraShortestPath_modified(start_test);
+	m.dijkstraShortestPath_modified(start_test, end_test);
 	vector<unsigned int> v1 = m.getPath(start_test, end_test);
 
 	cout << "\nIdeal Path: \n";
@@ -234,7 +234,7 @@ void Menu::calculatePaths_cars(){
 		Car * c = new Car(start_test, end_test);
 
 		if(recalc){
-			m.dijkstraShortestPath_modified(start_test);
+			m.dijkstraShortestPath_modified(start_test, end_test);
 			path_v = m.getPath_secure(start_test, end_test);
 		}
 
@@ -314,7 +314,7 @@ void Menu::calculatePaths_cars(){
 
 	cout << "\n\nRecalculating...\n\n";
 
-	m.dijkstraShortestPath_modified(start_test);
+	m.dijkstraShortestPath_modified(start_test, end_test);
 	vector<unsigned int> v2 = m.getPath(start_test, end_test);
 
 	if(v2.size() > 1){
@@ -356,7 +356,7 @@ void Menu::calculatePaths_cars(){
 		Car * c = new Car(start_test, end_test);
 
 		if(recalc){
-			m.dijkstraShortestPath_modified(start_test);
+			m.dijkstraShortestPath_modified(start_test, end_test);
 			path_v = m.getPath_secure(start_test, end_test);
 		}
 
