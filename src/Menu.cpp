@@ -123,7 +123,7 @@ void Menu::calculatePaths(){
 }
 
 void Menu::calculatePaths_cars(){
-	auto start = std::chrono::high_resolution_clock::now();
+	//auto start = std::chrono::high_resolution_clock::now();
 
 //Multiple cars, single accident
 
@@ -160,7 +160,7 @@ void Menu::calculatePaths_cars(){
 	cout << "|                                                        |" << endl;
 	cout << "|   1 - Example 1 (Palacio Cristal -> Cedofeita)         |" << endl;
 	cout << "|   2 - Example 2 (Praca da Rep. -> Rot. da Boavista)    |" << endl;
-	cout << "|   3 - Example 3 (Cedofeita -> Doze Casas)              |" << endl;
+	cout << "|   3 - Example 3 (Alfandega -> Gaia)                    |" << endl;
 	cout << "|   0 - Exit                                             |" << endl;
 	cout << "|                                                        |" << endl;
 	cout << "+--------------------------------------------------------+" << endl;
@@ -201,8 +201,8 @@ void Menu::calculatePaths_cars(){
 	m.dijkstraShortestPath_modified(start_test, end_test);
 	vector<unsigned int> v1 = m.getPath(start_test, end_test);
 
-	cout << "\nIdeal Path: \n";
 	if(v1.size() > 1){
+		cout << "\nIdeal Path: \n";
 		for(unsigned int i = 0; i < v1.size()-1; i++){
 			cout << v1.at(i) << " -> ";
 		}
@@ -420,9 +420,9 @@ void Menu::calculatePaths_cars(){
 	}
 
 	m.resetMapVars();
-	auto finish = std::chrono::high_resolution_clock::now();
-	auto mili = chrono::duration_cast<chrono::milliseconds>(finish - start).count();
-	cout << "\ngetPath_car took " << mili << " milliseconds\n";
+	//auto finish = std::chrono::high_resolution_clock::now();
+	//auto mili = chrono::duration_cast<chrono::milliseconds>(finish - start).count();
+	//cout << "\ngetPath_car took " << mili << " milliseconds\n";
 	cout << endl << "\nPress Enter to return\n" << endl;
 	cin.get();
 	m.closeWindow();

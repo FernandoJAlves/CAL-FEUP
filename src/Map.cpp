@@ -197,7 +197,7 @@ Node* Map::findNode(unsigned int index) const {
 }
 
 void Map::dijkstraShortestPath_modified(unsigned int origin, unsigned int dest){
-	auto start = std::chrono::high_resolution_clock::now();
+	//auto start = std::chrono::high_resolution_clock::now();
 	Node * v1 = this->findNode(origin);
 	Node * dest_node = this->findNode(dest);
 
@@ -234,9 +234,9 @@ void Map::dijkstraShortestPath_modified(unsigned int origin, unsigned int dest){
 			}
 		}
 	}
-	auto finish = std::chrono::high_resolution_clock::now();
-	auto mili = chrono::duration_cast<chrono::milliseconds>(finish - start).count();
-	cout << "\nDijkstra took " << mili << " milliseconds\n";
+	//auto finish = std::chrono::high_resolution_clock::now();
+	//auto mili = chrono::duration_cast<chrono::milliseconds>(finish - start).count();
+	//cout << "\nDijkstra took " << mili << " milliseconds\n";
 }
 
 vector<unsigned int> Map::getPath(unsigned int origin, unsigned int dest) const{
@@ -250,7 +250,7 @@ vector<unsigned int> Map::getPath(unsigned int origin, unsigned int dest) const{
 			cout << "The origin and destination introduced are the same node.\n";
 		}
 		else{
-			cout << "There is no paths available from node " << origin << " to node " << dest << endl;
+			cout << "There are no paths available from node " << origin << " to node " << dest << endl;
 		}
 	}
 
