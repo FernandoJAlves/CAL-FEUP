@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "Car.h"
 #include <iostream>
+#include <chrono>
 #include <cmath>
 
 
@@ -122,6 +123,7 @@ void Menu::calculatePaths(){
 }
 
 void Menu::calculatePaths_cars(){
+	auto start = std::chrono::high_resolution_clock::now();
 
 //Multiple cars, single accident
 
@@ -418,7 +420,9 @@ void Menu::calculatePaths_cars(){
 	}
 
 	m.resetMapVars();
-
+	auto finish = std::chrono::high_resolution_clock::now();
+	auto mili = chrono::duration_cast<chrono::milliseconds>(finish - start).count();
+	cout << "\ngetPath_car took " << mili << " milliseconds\n";
 	cout << endl << "\nPress Enter to return\n" << endl;
 	cin.get();
 	m.closeWindow();
