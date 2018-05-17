@@ -167,6 +167,21 @@ public:
 	void listLimitofPath(vector<unsigned int> v1);
 
 
+	//TODO
+
+
+	bool compareStringsExac(string s1, string s2);
+
+
+
+
+	int compareStringsAprox(string s1, string s2);
+
+
+
+
+
+
 	friend class Menu;
 
 };

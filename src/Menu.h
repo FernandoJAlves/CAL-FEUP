@@ -46,9 +46,15 @@ public:
 	void initialOptions();
 	
 	/**
-	 * @brief      Calculates the paths with multiple cars.
+	 * @brief      Calculates the paths with multiple cars, using aproximate string comparation
 	 */
-	void calculatePaths_cars();
+	void calculatePaths_cars_aprox();
+
+	/**
+	 * @brief      Calculates the paths with multiple cars, using exact string comparation
+	 */
+	void calculatePaths_cars_exat();
+
 
 	/**
 	 * @brief      Calculates the paths for a single car.
