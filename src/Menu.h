@@ -24,6 +24,9 @@
 #define END_TEST3      1132
 #define CARS_TEST3     1000
 
+#define MAX_STR_COMP	 5
+
+
 
 /**
  * @brief      Class for menu.
@@ -44,16 +47,11 @@ public:
 	 * @brief      Initial Options Menu
 	 */
 	void initialOptions();
-	
-	/**
-	 * @brief      Calculates the paths with multiple cars, using aproximate string comparation
-	 */
-	void calculatePaths_cars_aprox();
 
 	/**
-	 * @brief      Calculates the paths with multiple cars, using exact string comparation
+	 * @brief      Calculates the paths with multiple cars, using exact and aproximate string comparation
 	 */
-	void calculatePaths_cars_exat();
+	void calculatePaths_cars();
 
 
 	/**
@@ -68,7 +66,7 @@ public:
 
 
 
-	
+
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "graphviewer.h"
 #include "Node.h"
 #include <limits>
+#include <string>
 
 #define INF std::numeric_limits<double>::max()
 
@@ -170,12 +171,14 @@ public:
 	//TODO
 
 
-	bool compareStringsExac(string s1, string s2);
+	bool compareStringsExac(string s1, string s2){
+		return (s1 == s2);
+	}
 
 
 
 
-	int compareStringsAprox(string s1, string s2);
+	int compareStringsAprox(string s1, string s2){return true;}
 
 
 
