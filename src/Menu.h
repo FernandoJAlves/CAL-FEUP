@@ -12,17 +12,7 @@
 #endif
 
 
-#define START_TEST1    1537
-#define END_TEST1      225
-#define CARS_TEST1     50
-
-#define START_TEST2    24
-#define END_TEST2      3159
-#define CARS_TEST2     50
-
-#define START_TEST3    103
-#define END_TEST3      1132
-#define CARS_TEST3     1000
+#define CARS_TEST     	 50
 
 #define MAX_STR_COMP	 5
 

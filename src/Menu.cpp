@@ -38,6 +38,7 @@ void Menu::initialOptions(){
 			this->terminate = true;
 			cout << "The program will terminate. Thank you for choosing our service" << endl;
 			cin.get();
+			cin.get();
 			break;
 		default:
 			cout << "Invalid input!\n";
@@ -157,14 +158,18 @@ void Menu::calculatePaths_cars(){
 	m.createWindow();
 
 	unsigned int start_test, end_test;
-	int car_amount;
+	int car_amount = CARS_TEST;
 
 	string street_source, street_dest;
 
+	cin.clear();
+	cin.ignore(1000,'\n');
+
 	cout << "\nName of the current street: ";
-	cin >> street_source;
+	getline(cin, street_source);
 	cout << "\nName of the destination street: ";
-	cin >> street_dest;
+	getline(cin, street_dest);
+
 
 	bool source_exists = false, dest_exists = false;
 
@@ -186,7 +191,7 @@ void Menu::calculatePaths_cars(){
 	if(!source_exists){
 		for(unsigned int i = 0; i < m.roads.size(); i++){
 			aproxValue = m.compareStringsAprox(street_source, m.roads.at(i)->name);
-			if(aproxValue < MAX_STR_COMP){
+			if(aproxValue <= MAX_STR_COMP){
 				pair<int,int> p = make_pair(aproxValue,i);
 				aproxSources.push_back(p);
 			}
@@ -222,18 +227,56 @@ void Menu::calculatePaths_cars(){
 		else{
 			cout << "\nAlso, the name you wrote does not match any of the roads on our database...\nPress Enter to exit to the main menu\n";
 			cin.get();
+			m.closeWindow();
+			return;
+		}
+
+	}
+
+	if(!dest_exists){
+		for(unsigned int i = 0; i < m.roads.size(); i++){
+			aproxValue = m.compareStringsAprox(street_source, m.roads.at(i)->name);
+			if(aproxValue <= MAX_STR_COMP){
+				pair<int,int> p = make_pair(aproxValue,i);
+				aproxDestinations.push_back(p);
+			}
+		}
+
+		cout << "\nThe name of the destination road you wrote does not exist...";
+
+		if(aproxDestinations.size() > 0){
+			cout << "\nHere are some aproximate street names to the one you wrote: \n";
+
+			sort(aproxDestinations.begin(),aproxDestinations.end());
+
+			for(unsigned int i = 0; i < aproxDestinations.size(); i++){
+				cout << i << ": " << m.roads.at(aproxDestinations.at(i).second)->name << endl;
+			}
+
+			unsigned int listOption;
+
+			cout << "\nWhich one did you meant to write: ";
+			cin >> listOption;
+
+			if(listOption < 0 || listOption >= aproxDestinations.size()){
+				cout << "\nInvalid option... Press Enter to exit to the main menu\n";
+				cin.get();
+				cin.get();
+				m.closeWindow();
+				return;
+			}
+			else{
+				end_test = aproxDestinations.at(listOption).second;
+			}
+		}
+		else{
+			cout << "\nAlso, the name you wrote does not match any of the roads on our database...\nPress Enter to exit to the main menu\n";
 			cin.get();
 			m.closeWindow();
 			return;
 		}
 
-
-
-
-
-
 	}
-
 
 
 
@@ -344,20 +387,86 @@ void Menu::calculatePaths_cars(){
 
 	m.resetMapVars();
 
-	unsigned int acidente;
-	cout << "\nIndex of the edge where you want to simulate an accident: ";
-	cin >> acidente;
 
-	if(acidente < m.roads.size()){
-		m.setAccessRoad(acidente, false);
+
+	unsigned int acidente;
+
+	string street_acidente;
+
+	cin.clear();
+	cin.ignore(1000,'\n');
+
+	cout << "\nName of the street where the accident occured: ";
+	getline(cin, street_acidente);
+
+
+	bool acidente_exists = false;
+
+	for(unsigned int i = 0; i < m.roads.size(); i++){
+		if(m.compareStringsExac(street_acidente, m.roads.at(i)->name)){
+			acidente_exists = true;
+			acidente = i;
+		}
 	}
-	else{
-		cout << "Invalid input!\n";
-		cin.get();
-		cin.get();
-		m.closeWindow();
-		return;
+
+	vector<pair<int,int>> aproxAcidentes;
+
+	if(!acidente_exists){
+		for(unsigned int i = 0; i < m.roads.size(); i++){
+			aproxValue = m.compareStringsAprox(street_acidente, m.roads.at(i)->name);
+			if(aproxValue <= MAX_STR_COMP){
+				pair<int,int> p = make_pair(aproxValue,i);
+				aproxAcidentes.push_back(p);
+			}
+		}
+
+		cout << "\nThe name of the accident road you wrote does not exist...";
+
+		if(aproxAcidentes.size() > 0){
+			cout << "\nHere are some aproximate street names to the one you wrote: \n";
+
+			sort(aproxAcidentes.begin(),aproxAcidentes.end());
+
+			for(unsigned int i = 0; i < aproxAcidentes.size(); i++){
+				cout << i << ": " << m.roads.at(aproxAcidentes.at(i).second)->name << endl;
+			}
+
+			unsigned int listOption;
+
+			cout << "\nWhich one did you meant to write: ";
+			cin >> listOption;
+
+			if(listOption < 0 || listOption >= aproxAcidentes.size()){
+				cout << "\nInvalid option... Press Enter to exit to the main menu\n";
+				cin.get();
+				cin.get();
+				m.closeWindow();
+				return;
+			}
+			else{
+				acidente = aproxAcidentes.at(listOption).second;
+			}
+		}
+		else{
+			cout << "\nAlso, the name you wrote does not match any of the roads on our database...\nPress Enter to exit to the main menu\n";
+			cin.get();
+			m.closeWindow();
+			return;
+		}
+
 	}
+
+
+
+
+	m.setAccessRoad(acidente, false);
+
+
+
+
+
+
+
 
 	cout << "\n\nRecalculating...\n\n";
 

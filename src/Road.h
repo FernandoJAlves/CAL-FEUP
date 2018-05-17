@@ -11,7 +11,7 @@ class Node;
  */
 class Road{
 private:
-  std::string name;
+  std::string name = "";
   
   bool accessable = true;
   bool bidirectional;
