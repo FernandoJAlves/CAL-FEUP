@@ -387,3 +387,36 @@ void Map::resetMapVars(){
 
 
 }
+
+int Map::compareStringsAprox(string user_roadName, string roadName){
+		//optimization through space
+	int new_, old;
+	int n = roadName.length();
+	vector<int> d(n + 1, 0);
+
+	for(int j = 0; j<= n; j++) {
+		d.at(j) = j;
+	}
+
+	int m = user_roadName.length();
+
+	for(int i = 1; i <= m; i++) {
+			old = d.at(0);
+			d.at(0) = i;
+
+			for(int j = 1; j <= n; j++) {
+				if(user_roadName.at(i - 1) == roadName.at(j -1)) {
+						new_ = old;
+				} else {
+						new_ = min(old, d.at(j));
+						new_ = min(new_, d.at(j -1));
+						new_ = new_ + 1;
+				}
+
+				old = d.at(j);
+				d.at(j) = new_;
+			}
+	}
+
+	return d.at(n);
+}

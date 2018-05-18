@@ -178,7 +178,7 @@ public:
 
 
 
-	int compareStringsAprox(string s1, string s2){return 100;}
+	int compareStringsAprox(string s1, string s2);
 
 
 
