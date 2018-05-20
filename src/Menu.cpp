@@ -300,6 +300,7 @@ void Menu::calculatePaths_cars(){
 		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
 		cout << "\nPress Enter to calculate using multiple cars in circulation\n";
 		cin.get();
+		cin.get();
 	}
 	else{
 		cin.get();
@@ -453,17 +454,7 @@ void Menu::calculatePaths_cars(){
 
 	}
 
-
-
-
 	m.setAccessRoad(acidente, false);
-
-
-
-
-
-
-
 
 	cout << "\n\nRecalculating...\n\n";
 
@@ -488,6 +479,7 @@ void Menu::calculatePaths_cars(){
 
 			cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
 			cout << "\nPress Enter to calculate using multiple cars in circulation\n";
+			cin.get();
 			cin.get();
 		}
 	}
