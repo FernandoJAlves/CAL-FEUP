@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['light_5fgray',['LIGHT_GRAY',['../graphviewer_8h.html#a9663e02e20b5b578e6a31adae265cb88',1,'graphviewer.h']]]
+  ['node',['Node',['../classNode.html',1,'Node'],['../classNode.html#a9642253598e7e1f6b2f2e1b2e144558c',1,'Node::Node()']]]
 ];

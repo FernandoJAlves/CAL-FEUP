@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['connection',['Connection',['../class_connection.html',1,'']]]
+  ['car',['Car',['../classCar.html',1,'']]],
+  ['connection',['Connection',['../classConnection.html',1,'']]]
 ];

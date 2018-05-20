@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graphviewer',['GraphViewer',['../class_graph_viewer.html',1,'']]]
+  ['graphviewer',['GraphViewer',['../classGraphViewer.html',1,'']]]
 ];
