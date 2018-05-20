@@ -158,6 +158,7 @@ void Menu::calculatePaths_cars(){
 	m.createWindow();
 
 	unsigned int start_test, end_test;
+	unsigned int start_road, end_road;
 	int car_amount = CARS_TEST;
 
 	string street_source, street_dest;
@@ -176,11 +177,11 @@ void Menu::calculatePaths_cars(){
 	for(unsigned int i = 0; i < m.roads.size(); i++){
 		if(m.compareStringsExac(street_source, m.roads.at(i)->name)){
 			source_exists = true;
-			start_test = i;
+			start_road = i;
 		}
 		if(m.compareStringsExac(street_dest, m.roads.at(i)->name)){
 			dest_exists = true;
-			end_test = i;
+			end_road = i;
 		}
 	}
 
@@ -221,7 +222,7 @@ void Menu::calculatePaths_cars(){
 				return;
 			}
 			else{
-				start_test = aproxSources.at(listOption).second;
+				start_road = aproxSources.at(listOption).second;
 			}
 		}
 		else{
@@ -266,7 +267,7 @@ void Menu::calculatePaths_cars(){
 				return;
 			}
 			else{
-				end_test = aproxDestinations.at(listOption).second;
+				end_road = aproxDestinations.at(listOption).second;
 			}
 		}
 		else{
@@ -279,11 +280,8 @@ void Menu::calculatePaths_cars(){
 	}
 
 
-
-
-
-
-
+	start_test = m.roads.at(start_road)->src->index;
+	end_test = m.roads.at(end_road)->dest->index;
 
 
 	m.dijkstraShortestPath_modified(start_test, end_test);
@@ -301,7 +299,6 @@ void Menu::calculatePaths_cars(){
 
 		cout << "\nTime of travel: " << m.timeOfTravel(v1) << endl;
 		cout << "\nPress Enter to calculate using multiple cars in circulation\n";
-		cin.get();
 		cin.get();
 	}
 	else{
@@ -491,7 +488,6 @@ void Menu::calculatePaths_cars(){
 
 			cout << "\nTime of travel: " << m.timeOfTravel(v2) << endl;
 			cout << "\nPress Enter to calculate using multiple cars in circulation\n";
-			cin.get();
 			cin.get();
 		}
 	}

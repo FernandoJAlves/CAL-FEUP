@@ -157,6 +157,7 @@
 889;Largo da Paz;False;
 890;Rua de Fonseca Cardoso;False;
 894;Rua de Aníbal Cunha;False;
+898;Rua do Priorado;False;
 904;Rua do Carmo;False;
 905;Rua de São João;False;
 907;Praça da Rainha Dona Amélia;False;
@@ -374,6 +375,7 @@
 2129;Largo do Priorado;False;
 2134;Rua de Aníbal Cunha;False;
 2136;Rua de Aníbal Cunha;False;
+2137;Rua de Anibal Cunha Norte;False;
 2138;Praça de Pedro Nunes;False;
 2144;Rua da Pena;False;
 2161;Largo de Ferreira Lapa;False;
@@ -419,6 +421,7 @@
 2408;Rua de Agramonte;False;
 2409;Rua de Agramonte;False;
 2413;Rua de Dom Manuel II;False;
+2414;Rua de Dom Manuel;False;
 2419;Rua de Dom Manuel II;False;
 2422;Rua de Júlio Dinis;True;
 2426;Rua de Júlio Dinis;False;
