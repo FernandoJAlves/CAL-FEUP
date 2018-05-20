@@ -167,17 +167,24 @@ public:
 	 */
 	void listLimitofPath(vector<unsigned int> v1);
 
+	/**
+	 * @brief      Compares 2 strings, 
+	 *
+	 * @param	   s1    String 1
+ 	 * @param	   s2    String 2
+	 *
+	 * @return	   The bool value of that comparation
+	 */
+	bool compareStringsExac(string s1, string s2){return (s1 == s2);}
 
-	//TODO
-
-
-	bool compareStringsExac(string s1, string s2){
-		return (s1 == s2);
-	}
-
-
-
-
+	/**
+	 * @brief      Compares 2 strings, 
+	 *
+	 * @param	   s1    String 1
+ 	 * @param	   s2    String 2
+	 *
+	 * @return	   The edit distance value of that comparation
+	 */
 	int compareStringsAprox(string s1, string s2);
 
 
