@@ -14,12 +14,12 @@ void Menu::initialOptions(){
 	clearScreen();
 	cout << endl;
 	cout << "+-----------------------------------------------------------------------+" << endl;
-	cout << "|            			Initial Options Menu 			                 |" << endl;
-	cout << "|             						                                     |" << endl;
-	cout << "|     	1 - Start Simulation (Using Node Indexes & Single Car)           |" << endl;
-	cout << "|     	2 - Start Simulation (Using String Matching & Multiple Cars)     |" << endl;
-	cout << "|     	3 - Exit                                					     |" << endl;
-	cout << "|                            					                         |" << endl;
+	cout << "|                         Initial Options Menu                          |" << endl;
+	cout << "|                                                                       |" << endl;
+	cout << "|      1 - Start Simulation (Using Node Indexes & Single Car)           |" << endl;
+	cout << "|      2 - Start Simulation (Using String Matching & Multiple Cars)     |" << endl;
+	cout << "|      3 - Exit                                                         |" << endl;
+	cout << "|                                                                       |" << endl;
 	cout << "+-----------------------------------------------------------------------+" << endl;
 
 	int opcao;
